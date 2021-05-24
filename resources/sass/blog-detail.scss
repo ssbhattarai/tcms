@@ -1,0 +1,181 @@
+@import "./components/base.scss";
+@import "./components/main-swiper";
+@import "./components/blog";
+@include title();
+@include button();
+
+.top-gap {
+    height: 0px;
+}
+
+.blog-header-title {
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    // blue gradient
+    // @include gradient();
+    background-color: $p-color !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    h2 {
+        font-size: $lg-h1;
+        color: white;
+        font-weight: 800;
+        margin-bottom: 15px;
+    }
+    .underline {
+        width: 80px;
+        margin: auto;
+        height: 2px;
+        background-color: white;
+    }
+}
+
+.blog-container {
+    margin-top: -50px;
+    margin: auto;
+    margin-bottom: 70px;
+    .b-cat {
+        p {
+            font-size: $h4;
+            font-weight: 800;
+            color: $light-grey;
+        }
+    }
+    .b-title {
+        margin-bottom: 20px;
+        h1 {
+            font-weight: 800;
+            text-transform: capitalize;
+        }
+    }
+    .b-info {
+        width: 100%;
+        .bi-info {
+            .bii-item {
+                text-transform: capitalize;
+                padding-right: 15px;
+                i {
+                    color: $light-grey;
+                    padding-right: 5px;
+                }
+            }
+        }
+        .bi-share {
+            #social-links {
+                ul {
+                    padding: 0px 20px;
+                    display: flex;
+                    flex-direction: row;
+                    li {
+                        padding-right: 10px;
+                        color: $p-color !important;
+                        a {
+                            color: $p-color !important;
+                            span {
+                                color: $p-color !important;
+                                font-size: $h3;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .b-image {
+        margin-top: 50px;
+        img {
+            width: 100%;
+            border-radius: 5px;
+        }
+    }
+    .b-description {
+        margin-top: 50px;
+        p,
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: $light-grey;
+        }
+        p {
+            line-height: 30px;
+        }
+    }
+}
+
+.related {
+    margin: auto;
+    margin-bottom: 70px;
+    .r-title {
+        margin-bottom: 50px;
+        h2 {
+            font-size: $h1;
+            font-weight: 800;
+            text-align: center;
+        }
+    }
+    .related-list {
+        .r-item {
+            margin-bottom: 30px;
+            @include blog_content();
+        }
+        .blog-item {
+            .blog-content {
+                height: 100%;
+                width: 100%;
+                .blog-image {
+                    height: 150px;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: center center;
+                        padding: 0px;
+                        margin: 0px;
+                    }
+                }
+                .blog-title {
+                    padding: 10px;
+                    h5 {
+                        font-size: 24px;
+                    }
+                    .blog-description {
+                        font-size: 14px;
+                    }
+                    .bc-button {
+                        margin-top: 20px;
+                        label {
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and(max-width:768px) {
+    .blog-title {
+        h2 {
+            font-size: $lg-h2;
+        }
+    }
+    #blog-container {
+        margin-top: 0px;
+    }
+    .blog-container {
+        margin: auto;
+        margin-bottom: 70px;
+
+        .b-title {
+            margin-bottom: 20px;
+            h1 {
+                font-size: $h1;
+                font-weight: 800;
+            }
+        }
+    }
+}

@@ -1,0 +1,118 @@
+@import "./components/base.scss";
+@import "./components/main-swiper";
+@import "./components/menu-list";
+@include title();
+@include button();
+
+.navbar {
+    background-color: white !important;
+    box-shadow: $box-shadow;
+}
+
+.no-items {
+    height: 100vh;
+    margin-top: 200px;
+    a {
+        display: block;
+        width: 250px;
+        margin: auto;
+    }
+}
+
+.cart {
+    margin: auto;
+    margin-top: 50px;
+    position: relative;
+    .cart-list {
+        .cart-items {
+            border: 1px solid $border-light;
+            margin-bottom: 20px;
+            .cart-image {
+                img {
+                    width: 100%;
+                }
+            }
+            .cart-detail,
+            .cart-delete,
+            .cart-price,
+            .cart-quantity {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .cart-detail {
+                text-transform: capitalize;
+            }
+            .cart-price {
+                span {
+                    color: $p-color;
+                }
+            }
+            .cart-delete {
+                button {
+                    border: 0px solid white;
+                    background-color: rgba(255, 255, 255, 0);
+                    i {
+                        color: $s-color;
+                    }
+                }
+            }
+        }
+    }
+    .order-summary {
+        position: sticky;
+        top: 200px;
+        left: 0px;
+        .summary-wrapper {
+            background-color: $p-color;
+            table {
+                margin-top: 20px;
+                width: 100%;
+            }
+        }
+
+        .checkout {
+            margin-top: 20px;
+            a {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+}
+
+// checkout page
+
+.checkout {
+    padding: 10px;
+
+    margin: auto;
+    margin-top: 50px;
+    .order-summary {
+        position: sticky;
+        top: 200px;
+        left: 0px;
+        .summary-wrapper {
+            background-color: $p-color;
+
+            .summary-title {
+                padding: 10px;
+                h3 {
+                    color: white;
+                    margin: 0px;
+                    font-weight: bold;
+                }
+            }
+            table {
+                width: 100%;
+                tbody {
+                    tr {
+                        td {
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

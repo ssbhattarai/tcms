@@ -1,0 +1,74 @@
+.services-swiper {
+    width: 100%;
+    height: 100%;
+
+    .swiper-wrapper {
+        .swiper-slide {
+            position: relative;
+            text-align: center;
+            font-size: 18px;
+            height: 300px;
+            padding: 20px 0px;
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            .swiper-content {
+                height: 90%;
+                padding-bottom: 10px;
+                box-shadow: $box-shadow;
+
+                &:hover {
+                    transform: scale(1.08);
+                    transition: transform 0.5s ease !important;
+                }
+                .swiper-button {
+                    margin-top: 10px;
+                    p {
+                        margin-bottom: 10px;
+                        font-size: 14px;
+                        font-weight: bold;
+                    }
+                    button {
+                        margin-top: 10px;
+                        padding: 7px 10px;
+                        display: block;
+                        width: 70%;
+                        margin: auto;
+                        font-size: 12px;
+                        border-radius: 25px;
+                        border: 1px solid $border-light;
+                        font-weight: bold;
+                        background-color: white;
+                        color: $light-grey;
+                        outline: none;
+                        &:hover {
+                            @include gradient();
+                            color: white;
+                        }
+                    }
+                }
+                .swiper-image {
+                    border: 1px solid $light;
+                    // width: 100%;
+                    height: 65%;
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,76 @@
+@import "./components/base.scss";
+@import "./components/main-swiper";
+@import "./components/menu-list";
+@include title();
+@include button();
+iframe {
+    width: 100%;
+}
+
+.contact-us-infos {
+    padding: 50px 0px;
+    // background-color: $p-color;
+    h4,
+    i {
+        // color: white;
+        text-align: center;
+    }
+    .cu-item {
+        padding: 10px;
+        .cu-content {
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            h4 {
+                i {
+                    color: $p-color;
+                    padding-right: 20px;
+                }
+            }
+        }
+    }
+}
+
+.blog-header-title {
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    // blue gradient
+    background-image: url(../../public/assets/images/contact.JPG);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    h2 {
+        font-size: $lg-h1;
+        color: white;
+        font-weight: 800;
+        margin-bottom: 15px;
+        font-family: $normal;
+    }
+    .underline {
+        width: 80px;
+        margin: auto;
+        height: 2px;
+        background-color: white;
+    }
+}
+
+.contact-us {
+    .contact-infos {
+        // background-color: $p-color;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        div {
+            margin-bottom: 20px;
+            p {
+                // color: white;
+            }
+        }
+    }
+}

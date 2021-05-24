@@ -1,0 +1,39 @@
+@import "./components/base.scss";
+
+@include title();
+@include button();
+
+.header-title {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    // font-family: $cursive;
+    // blue gradient
+    background: rgb(255, 254, 254);
+    background-size: cover;
+    background-attachment: fixed;
+    h2 {
+        font-size: $lg-h1;
+        color: white;
+        font-weight: 800;
+        margin-bottom: 15px;
+        text-transform: capitalize;
+    }
+    .underline {
+        width: 80px;
+        margin: auto;
+        height: 2px;
+        background-color: $p-color;
+    }
+}
+
+.info-details {
+    margin: auto;
+    box-shadow: $box-shadow;
+    margin-bottom: 10vh;
+    margin-top: -50px;
+    background-color: white;
+    border-radius: 20px;
+}

@@ -1,0 +1,59 @@
+<?php
+
+use App\Http\Controllers\Frontend\FrontendController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
+Auth::routes([
+    'register' => false, // Registration Routes...
+    'reset' => false, // Password Reset Routes...
+    // 'verify' => false, // Email Verification Routes...
+]);
+
+// logo
+Route::get('/get-logo', [App\Http\Controllers\Backend\Settings\HomepageController::class, 'getLogo']);
+// contact page
+Route::get('/contact', [App\Http\Controllers\Frontend\FrontendController::class, 'contact']);
+Route::get('/about', [App\Http\Controllers\Frontend\FrontendController::class, 'about']);
+Route::post('/save-contact', [App\Http\Controllers\Frontend\FrontendController::class, 'saveContact']);
+
+// info pages like(about us - terms and condition)
+Route::get('/infos/{slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'infos']);
+
+//  frontend controllers
+Route::get('/', [App\Http\Controllers\Frontend\FrontendController::class, 'home']);
+Route::get('/reservation', [App\Http\Controllers\Frontend\FrontendController::class, 'reservation']);
+Route::get('/get-logged-user', [App\Http\Controllers\Frontend\FrontendController::class, 'getLoggedUser']);
+Route::post('/reservation/save', [App\Http\Controllers\Frontend\FrontendController::class, 'saveReservation']);
+
+// blogs
+Route::get('/blog', [App\Http\Controllers\Frontend\FrontendController::class, 'Blog']);
+Route::get('/blog/{slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'BlogDetail'])->name('blog.view');
+Route::post('/get-blog-category', [App\Http\Controllers\Frontend\FrontendController::class, 'getBlogByCategory']);
+
+Route::post('/get-product/', [App\Http\Controllers\Frontend\Product\ProductController::class, 'getAllProduct']);
+Route::post('/get-latest-recipies/', [App\Http\Controllers\Frontend\Product\ProductController::class, 'getLatestRecipies']);
+Route::get('/get-all-categories', [App\Http\Controllers\Frontend\Product\ProductController::class, 'getCategories']);
+Route::get('/category/{blogcategory}', [App\Http\Controllers\Frontend\FrontendController::class, 'blogCategory']);
+Route::post('/get-blog-category', [App\Http\Controllers\Frontend\FrontendController::class, 'getBlogByCategory']);
+
+//menu
+Route::get('/menu', [App\Http\Controllers\Frontend\FrontendController::class, 'Menu']);
+Route::get('/menu/{cat_name}', [App\Http\Controllers\Frontend\FrontendController::class, 'MenuCategoryView']);
+
+// cart
+Route::get('/cart', [App\Http\Controllers\Frontend\Product\CartController::class, 'viewCart']);
+Route::get('/cart/get-all', [App\Http\Controllers\Frontend\Product\CartController::class, 'getAllCartItems']);
+Route::get('/cart/add/{product_id}', [App\Http\Controllers\Frontend\Product\CartController::class, 'addToCart']);
+Route::get('/cart/delete/{product_id}', [App\Http\Controllers\Frontend\Product\CartController::class, 'deleteItem']);
+Auth::routes();
+
+//our team
+Route::get('/our-team', [App\Http\Controllers\Frontend\FrontendController::class, 'ourteam']);
+
+
+//faqs
+Route::get('/faqs', [App\Http\Controllers\Frontend\FrontendController::class, 'faqs']);
+
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

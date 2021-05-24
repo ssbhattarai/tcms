@@ -1,0 +1,13 @@
+@import "./components/base.scss";
+@import "./components/blog";
+@import "./components/blog-column";
+@include title();
+@include button();
+
+.container-fluid {
+    margin-top: 50px;
+}
+
+// .blog {
+//     background-color: white;
+// }

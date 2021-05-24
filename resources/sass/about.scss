@@ -1,0 +1,153 @@
+@import "./components/base.scss";
+@include title();
+@include button();
+
+.header-title {
+    height: 70vh;
+    background-image: url(./assets/images/masu.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    .title-info {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        .button {
+            border-width: 0;
+            border-radius: 40px;
+            background-color: rgba(255, 255, 255, 0) !important;
+        }
+        h2 {
+            font-weight: bold;
+            color: white;
+            margin-bottom: 30px;
+            text-shadow: 0px 0px 20px 20px black;
+        }
+        p {
+            font-size: 24px;
+            color: white;
+            margin-bottom: 30px;
+        }
+    }
+}
+
+.food-info {
+    margin: auto;
+    margin-top: 70px;
+    margin-bottom: 150px;
+    .food-description {
+        h3 {
+            font-family: $cursive;
+            font-weight: bold;
+            margin-bottom: 40px;
+        }
+        p {
+            margin-bottom: 50px;
+            line-height: 35px;
+            color: $light-grey;
+        }
+        .f-social-icons {
+            padding: 0px;
+            li {
+                a {
+                    i {
+                        color: $p-color;
+                        background-color: white;
+                        border-radius: 50%;
+                        padding: 7px 8px;
+                        font-size: $h2;
+                    }
+                }
+            }
+        }
+    }
+    .info-image {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        .info-image1,
+        .info-image2 {
+            width: 50%;
+            height: 300px;
+            @include cover();
+        }
+        .info-image1 {
+            border: 10px solid white;
+            width: 50%;
+            position: absolute;
+            top: 50px;
+            left: 100px;
+            margin-top: 50px;
+        }
+    }
+}
+
+.services {
+    margin: auto;
+    margin-bottom: 70px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    .services-main-title {
+        text-align: center;
+        h1 {
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        p {
+            margin: auto;
+            margin-bottom: 40px;
+        }
+        .underline {
+            margin: auto;
+            width: 100px;
+            height: 2px;
+            background-color: $s-color;
+            margin-bottom: 40px;
+        }
+    }
+    .services-list {
+        margin: auto;
+        .services-item {
+            // margin: auto;
+            height: 100%;
+            margin-bottom: 20px;
+            .services-content {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                margin: auto;
+                cursor: pointer;
+                &:hover {
+                    .b-image {
+                        img {
+                            transform: scale(1.05);
+                        }
+                    }
+                    .b-title {
+                        color: $light-grey;
+                    }
+                }
+                .services-image {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    svg {
+                        height: 100px;
+                        width: 100px;
+                        margin: auto;
+                        margin-top: 30px;
+                    }
+                }
+                .services-title {
+                    font-weight: bold;
+                    margin-top: 10px;
+                    transition: 0.3s ease;
+                }
+            }
+        }
+    }
+}

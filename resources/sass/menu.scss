@@ -1,0 +1,56 @@
+@import "./components/base.scss";
+@import "./components/main-swiper";
+@import "./components/menu-list";
+@import "./components/categories-menu";
+@import "./components/loader";
+
+@include title();
+@include button();
+
+.menu-heading {
+    position: relative;
+    height: 40vh;
+    .title-wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        h1 {
+            font-weight: bold;
+            // font-family: $cursive;
+            color: white;
+            font-size: 60px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        h3 {
+            font-family: $cursive;
+            padding-top: 10px;
+            border-top: 2px solid white;
+            text-align: center;
+            color: white;
+            text-transform: capitalize;
+        }
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+        filter: brightness(80%);
+    }
+}
+
+.menu {
+    position: relative;
+    .menu-title {
+        h5,
+        h1 {
+            display: none;
+        }
+    }
+}
+
+.menu-nav {
+    display: none;
+}

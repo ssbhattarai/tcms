@@ -1,0 +1,85 @@
+@import "./components/base.scss";
+@import "./components/main-swiper";
+@include title();
+@include button();
+
+.form-group label {
+    color: white;
+}
+
+.navbar {
+    border-bottom: 1px solid $border-light;
+}
+
+.title-description {
+    padding: 50px 0px;
+    background-color: $p-color;
+    p {
+        color: white;
+    }
+}
+
+.reservation-form {
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: auto;
+    border-radius: 10px;
+    margin-top: 0px;
+    padding-top: 20px;
+    box-shadow: $box-shadow;
+    .message {
+        label {
+            text-align: center;
+            font-weight: bold;
+            display: block;
+            background-color: $border-light;
+        }
+    }
+    .title {
+        h5 {
+            font-family: $cursive;
+            color: $light-grey;
+            font-weight: 100;
+            color: white;
+        }
+        h1 {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: $s-color;
+        }
+        .book-table-title {
+            position: relative;
+            .line {
+                position: absolute;
+                bottom: 30%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                height: 2px;
+                background-color: $p-color;
+                width: 100%;
+                z-index: -1;
+            }
+            .word {
+                background-color: white;
+                width: auto;
+                padding: 10px;
+                font-size: 20px;
+                text-transform: uppercase;
+                font-weight: bold;
+                color: $light-grey;
+            }
+        }
+    }
+
+    .button {
+        width: 100%;
+    }
+    .message {
+        font-weight: bold;
+        .success {
+            color: $p-color;
+        }
+        .error {
+            color: $s-color;
+        }
+    }
+}

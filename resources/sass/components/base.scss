@@ -1,0 +1,141 @@
+@import "./all";
+@import "./functions";
+@import "./navbar";
+@import "./footer";
+
+@import "./components/swiper-services";
+
+.main-container {
+    margin: auto;
+    margin-top: -150px;
+}
+
+.cursive {
+    font-family: $cursive;
+}
+
+// login form
+.login {
+    display: none;
+    margin: auto;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.8);
+    .fa-times {
+        color: black;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 25px;
+        cursor: pointer;
+    }
+    .login-form {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        background-color: white;
+        padding: 20px;
+        box-shadow: $box-shadow;
+        .title-form {
+            font-weight: bold;
+        }
+        .social-link {
+            .row {
+                .fb,
+                .google {
+                    margin-top: 10px;
+                    text-align: center;
+                    background-color: $p-color;
+                    padding: 10px;
+                    color: white;
+                    i {
+                        color: white;
+                        padding-right: 10px;
+                    }
+                }
+                .google {
+                    background-color: $s-color;
+                }
+            }
+        }
+    }
+}
+
+.added-message {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    box-shadow: $blue-shadow;
+    z-index: 99;
+    background-color: $p-color;
+
+    letter-spacing: 2px;
+    animation: fade 1s ease;
+    span {
+        color: white;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.2;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+// form group
+
+.form-group {
+    .form-field {
+        width: 100%;
+        // user-select: none;
+        padding: 10px;
+        outline: none;
+        border: 1px solid $border-light;
+    }
+    label {
+        color: $light-grey;
+    }
+}
+
+.menu-heading {
+    position: relative;
+    height: 40vh;
+    margin-bottom: 50px;
+    .title-wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        h1 {
+            font-weight: bold;
+            // font-family: $cursive;
+            color: white;
+            font-size: 60px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        h3 {
+            font-family: $cursive;
+            padding-top: 10px;
+            border-top: 2px solid white;
+            text-align: center;
+            color: white;
+            text-transform: capitalize;
+        }
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+        filter: brightness(80%);
+    }
+}
