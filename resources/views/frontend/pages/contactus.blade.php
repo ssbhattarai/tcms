@@ -75,36 +75,84 @@
        <div class="row align-items-center">
           <div class="col-lg-6 col-md-12"><img src="{{ asset('frontend/images/contact-img.png') }}" alt="image"></div>
           <div class="col-lg-6 col-md-12">
-             <form id="contactForm">
+            @if ($message = Session::get('success'))
+            <div class="col-lg-12 mt-2">
+                <div class="alert alert-success alert-block text-center">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>{{ $message }}</strong>
+                </div>
+            </div>
+        @endif
+
+        @if ($message = Session::get('error'))
+            <div class="col-lg-12 mt-2">
+                <div class="alert alert-danger alert-block text-center">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>{{ $message }}</strong>
+                </div>
+            </div>
+        @endif
+
+             <form id="contactForm" action="{{ url('save-contact') }}" method="POST">
+                @csrf
                 <div class="row">
                    <div class="col-lg-12 col-md-12">
                       <div class="form-group">
-                         <input type="text" name="name" placeholder="Your Name" class="form-control" value>
-                         <div class="invalid-feedback" style="display:block"></div>
-                      </div>
-                   </div>
-                   <div class="col-lg-12 col-md-12">
-                      <div class="form-group">
-                         <input type="text" name="email" placeholder="Your email address" class="form-control" value>
-                         <div class="invalid-feedback" style="display:block"></div>
-                      </div>
-                   </div>
-                   <div class="col-lg-6 col-md-6">
-                      <div class="form-group">
-                         <input type="text" name="number" placeholder="Your phone number" class="form-control" value>
-                         <div class="invalid-feedback" style="display:block"></div>
+                         <input type="text" name="name" placeholder="Your Name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}">
+
+                         @error('name')
+
+                        <div class="invalid-feedback" style="display:block">
+                            {{ $message }}
+                        </div>
+                        @enderror
+
                       </div>
                    </div>
                    <div class="col-lg-6 col-md-6">
                       <div class="form-group">
-                         <input type="text" name="subject" placeholder="Your Subject" class="form-control" value>
-                         <div class="invalid-feedback" style="display:block"></div>
+                         <input type="text" name="email" placeholder="Your email address" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}">
+                         @error('email')
+
+                         <div class="invalid-feedback" style="display:block">
+                             {{ $message }}
+                         </div>
+                         @enderror
+                      </div>
+                   </div>
+                   <div class="col-lg-6 col-md-6">
+                      <div class="form-group">
+                         <input type="text" name="phone" placeholder="Your phone number" class="form-control @error('phone') is-invalid @enderror" value="{{ old('phone') }}">
+                         @error('phone')
+
+                         <div class="invalid-feedback" style="display:block">
+                             {{ $message }}
+                         </div>
+                         @enderror
                       </div>
                    </div>
                    <div class="col-lg-12 col-md-12">
                       <div class="form-group">
-                         <textarea name="text" cols="30" rows="5" placeholder="Write your message..." class="form-control"></textarea>
-                         <div class="invalid-feedback" style="display:block"></div>
+                         <input type="text" name="subject" placeholder="Your Subject" class="form-control @error('subject') is-invalid @enderror" value="{{ old('subject') }}">
+
+                         @error('subject')
+
+                         <div class="invalid-feedback" style="display:block">
+                             {{ $message }}
+                         </div>
+                         @enderror
+
+                      </div>
+                   </div>
+                   <div class="col-lg-12 col-md-12">
+                      <div class="form-group">
+                         <textarea name="message" cols="30" rows="5" placeholder="Write your message..." class="form-control @error('message') is-invalid @enderror">{{ old('message') }}</textarea>
+                         @error('message')
+
+                         <div class="invalid-feedback" style="display:block">
+                             {{ $message }}
+                         </div>
+                         @enderror
                       </div>
                    </div>
                    <div class="col-lg-12 col-sm-12"><button type="submit" class="btn btn-primary">Send Message</button></div>

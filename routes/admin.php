@@ -39,6 +39,13 @@ Route::group(['middleware' => ['auth']], function () {
         Route::post('/get-all-contacts', [App\Http\Controllers\Backend\Settings\ContactController::class, 'getAllContacts']);
         Route::get('/set-seen/contact/{id}', [App\Http\Controllers\Backend\Settings\ContactController::class, 'setSeenContact']);
 
+
+        //our team
+
+        Route::resource('/team', App\Http\Controllers\Backend\Settings\TeamController::class)->only(['index', 'update', 'destroy', 'store']);
+        Route::post('changeteamstatus/{id}', [App\Http\Controllers\Backend\Settings\TeamController::class, 'changeteamstatus']);
+
+
         // Users---------------------------------------------------------------------------------------------
         // Route::resource('/users', App\Http\Controllers\Backend\Users\UserController::class)->only(['index', 'update', 'destroy']);
         // Route::post('/get-all-users', [App\Http\Controllers\Backend\Users\UserController::class, 'getAllUsers']);

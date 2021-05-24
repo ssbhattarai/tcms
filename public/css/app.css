@@ -10784,7 +10784,7 @@ a.text-danger:focus {
 }
 
 .text-light {
-    color: #42576d !important;
+  color: #f8f9fa !important;
 }
 
 a.text-light:hover,

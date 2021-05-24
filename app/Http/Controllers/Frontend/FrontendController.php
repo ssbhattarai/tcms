@@ -12,6 +12,7 @@ use App\Models\Product;
 use App\Models\Reservation;
 use App\Models\Script;
 use App\Models\Slider;
+use App\Models\Team;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -190,7 +191,7 @@ class FrontendController extends BaseController
     // our team
     public function ourteam() {
 
-        SEOTools::setTitle('Team - Thoplomachine');
+        SEOTools::setTitle('Our Team - Thoplo machine');
         SEOTools::setDescription('Our Team');
         SEOTools::opengraph()->setUrl('http://thoplomachine.com');
         SEOTools::setCanonical('https://thoplomachine.com/our-team');
@@ -198,7 +199,25 @@ class FrontendController extends BaseController
         SEOTools::twitter()->setSite('@thoplomachine');
         SEOTools::jsonLd()->addImage('https://codecasts.com.br/img/logo.jpg');
 
-        return view('frontend.pages.ourteam');
+        $activeteams = Team::where('status', 1)->get();
+
+        return view('frontend.pages.ourteam', compact('activeteams'));
+    }
+
+    //portfolio
+
+    public function portfolio() {
+
+        SEOTools::setTitle('Our Team - Thoplo machine');
+        SEOTools::setDescription('Our Team');
+        SEOTools::opengraph()->setUrl('http://thoplomachine.com');
+        SEOTools::setCanonical('https://thoplomachine.com/our-team');
+        SEOTools::opengraph()->addProperty('type', 'articles');
+        SEOTools::twitter()->setSite('@thoplomachine');
+        SEOTools::jsonLd()->addImage('https://codecasts.com.br/img/logo.jpg');
+
+
+        return view('frontend.pages.portfolio');
     }
 
     // info pages like - about us , terms and conditions-------------------
@@ -285,22 +304,25 @@ class FrontendController extends BaseController
         // dd($request->all());
         $validate = $request->validate([
             'name' => 'required|string',
-            'email' => 'required|string',
+            'email' => 'required|email',
+            'subject' => 'required|string',
             'phone' => 'required|string',
-            'message' => 'required|string',
+            'message' => 'required',
         ]);
 
         $store = new Contact();
         $store->name = $request->name;
         $store->phone = $request->phone;
         $store->email = $request->email;
+        $store->subject = $request->subject;
         $store->message = $request->message;
         $store->save();
+
         if ($store) {
-            return json_encode($this->reportSuccess('Message sent Successfully. Our team will contact you soon.'));
+            return back()->with(['success' => 'Thank you for contacting us. we will get back to you soon.']);
 
         } else {
-            return json_encode($this->reportError('Message send failed. Please try again'));
+            return back()->with(['error' => 'Something went wrong. Try again.']);
         }
     }
 
@@ -316,6 +338,7 @@ class FrontendController extends BaseController
 
         return view('frontend.pages.faqs');
     }
+
 
 
 

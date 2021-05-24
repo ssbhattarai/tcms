@@ -6,7 +6,7 @@
             <div class="d-table">
                <div class="d-table-cell">
                   <div class="container">
-                     <h2>Team</h2>
+                     <h2>Our Team</h2>
                   </div>
                </div>
             </div>
@@ -21,106 +21,27 @@
          </div>
          <div class="team-area pt-80 pb-50 bg-f9f6f6">
             <div class="container">
-               <div class="row justify-content-center">
-                  <div class="col-lg-4 col-md-6">
-                     <div class="single-team">
-                        <div class="team-image"><img src="images/team1.jpg" alt="image"></div>
-                        <div class="team-content">
-                           <div class="team-info">
-                              <h3>Josh Buttler</h3>
-                              <span>CEO &amp; Founder</span>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6">
-                     <div class="single-team">
-                        <div class="team-image"><img src="images/team2.jpg" alt="image"></div>
-                        <div class="team-content">
-                           <div class="team-info">
-                              <h3>Alex Maxwel</h3>
-                              <span>Marketing Manager</span>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6">
-                     <div class="single-team">
-                        <div class="team-image"><img src="images/team3.jpg" alt="image"></div>
-                        <div class="team-content">
-                           <div class="team-info">
-                              <h3>Janny Cotller</h3>
-                              <span>Web Developer</span>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6">
-                     <div class="single-team">
-                        <div class="team-image"><img src="images/team4.jpg" alt="image"></div>
-                        <div class="team-content">
-                           <div class="team-info">
-                              <h3>Jason Statham</h3>
-                              <span>UX/UI Designer</span>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6">
-                     <div class="single-team">
-                        <div class="team-image"><img src="images/team5.jpg" alt="image"></div>
-                        <div class="team-content">
-                           <div class="team-info">
-                              <h3>Corey Anderson</h3>
-                              <span>Project Manager</span>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6">
-                     <div class="single-team">
-                        <div class="team-image"><img src="images/team1.jpg" alt="image"></div>
-                        <div class="team-content">
-                           <div class="team-info">
-                              <h3>Josh Buttler</h3>
-                              <span>CEO &amp; Founder</span>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6">
-                     <div class="single-team">
-                        <div class="team-image"><img src="images/team2.jpg" alt="image"></div>
-                        <div class="team-content">
-                           <div class="team-info">
-                              <h3>Alex Maxwel</h3>
-                              <span>Marketing Manager</span>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6">
-                     <div class="single-team">
-                        <div class="team-image"><img src="images/team3.jpg" alt="image"></div>
-                        <div class="team-content">
-                           <div class="team-info">
-                              <h3>Janny Cotller</h3>
-                              <span>Web Developer</span>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6">
-                     <div class="single-team">
-                        <div class="team-image"><img src="{{ asset('frontend/images/team4.jpg') }}" alt="image"></div>
-                        <div class="team-content">
-                           <div class="team-info">
-                              <h3>Jason Statham</h3>
-                              <span>UX/UI Designer</span>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
+                <div class="row justify-content-center">
+                   @if(count($activeteams) > 0)
+                   @foreach ($activeteams as $item)
+
+                   <div class="col-lg-4 col-md-6">
+                      <div class="single-team">
+                         <div class="team-image"><img src="{{ asset('assets/team/') }}/{{ $item->image }}" alt="image"></div>
+                         <div class="team-content">
+                            <div class="team-info">
+                               <h3>{{ $item->name }}</h3>
+                               <span>{{ $item->post }}</span>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                   @endforeach
+                  @else
+
+                  <h4>NO Data</h4>
+
+                  @endif
                </div>
             </div>
          </div>

@@ -3,7 +3,7 @@
     <div class="row align-items-center justify-content-lg-between">
         <div class="col-12">
         <div class="copyright text-center  text-lg-center  text-muted">
-            &copy; 2021 Grill and bakes
+            &copy; 2021 CMS
         </div>
         </div>
     </div>

@@ -34,9 +34,9 @@
               </a>
             </li>
             <li>
-              <a href="{{ url('/')}}" class="btn btn-warning btn-sm" target="_blank" rel="noopener noreferrer">Open App</a>
+              {{-- <a href="{{ url('/')}}" class="btn btn-warning btn-sm" target="_blank" rel="noopener noreferrer">Open App</a> --}}
             </li>
-            
+
           </ul>
           <ul class="navbar-nav align-items-center  ml-auto ml-md-0 ">
             <li class="nav-item dropdown">
@@ -60,7 +60,7 @@
                 </a>
                 --}}
                 <div class="dropdown-divider"></div>
-               
+
                   <a class="dropdown-item" href="{{ route('logout') }}"
                       onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
@@ -69,7 +69,7 @@
 
                   <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                       @csrf
-                  </form>                          
+                  </form>
               </div>
             </li>
           </ul>

@@ -51,6 +51,9 @@ Auth::routes();
 //our team
 Route::get('/our-team', [App\Http\Controllers\Frontend\FrontendController::class, 'ourteam']);
 
+// portfolio
+Route::get('/portfolio', [App\Http\Controllers\Frontend\FrontendController::class, 'portfolio']);
+
 
 //faqs
 Route::get('/faqs', [App\Http\Controllers\Frontend\FrontendController::class, 'faqs']);

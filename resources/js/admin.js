@@ -23,6 +23,8 @@ Vue.component("category", require("./backend/service/category").default);
 // users
 Vue.component("users", require("./backend/users/users").default);
 
+
+
 // global components
 import { BootstrapVue } from "bootstrap-vue";
 import FlashMessage from "@smartweb/vue-flash-message";
@@ -31,6 +33,9 @@ Vue.component("pagination", require("laravel-vue-pagination"));
 Vue.use(BootstrapVue);
 Vue.use(FlashMessage);
 Vue.use(require("vue-moment"));
+
+
+Vue.component('pagination', require('laravel-vue-pagination'));
 
 
 const moment = require('moment')

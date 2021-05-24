@@ -21,7 +21,8 @@
         "laravel/ui": "^3.2",
         "nesbot/carbon": "^2.46",
         "spatie/laravel-analytics": "^3.10",
-        "stripe/stripe-php": "^7.75"
+        "stripe/stripe-php": "^7.75",
+        "yajra/laravel-datatables-oracle": "^9.18"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",

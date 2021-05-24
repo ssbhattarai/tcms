@@ -68,23 +68,93 @@
 
        <div class="faq-contact">
           <h3>Ask Your Question</h3>
-          <form>
-             <div class="row">
-                <div class="col-lg-6 col-md-6">
-                   <div class="form-group"><input type="text" placeholder="Name" class="form-control"></div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                   <div class="form-group"><input type="email" placeholder="Email" class="form-control"></div>
-                </div>
-                <div class="col-lg-12 col-md-12">
-                   <div class="form-group"><input type="text" placeholder="Subject" class="form-control"></div>
-                </div>
-                <div class="col-lg-12 col-md-12">
-                   <div class="form-group"><textarea name="message" cols="30" rows="6" placeholder="Message" class="form-control"></textarea></div>
-                </div>
-                <div class="col-lg-12 col-md-12"><button class="btn btn-primary" type="submit">Submit Now!</button></div>
-             </div>
-          </form>
+          @if ($message = Session::get('success'))
+          <div class="col-lg-12 mt-2">
+              <div class="alert alert-success alert-block text-center">
+                  <button type="button" class="close" data-dismiss="alert">×</button>
+                  <strong>{{ $message }}</strong>
+              </div>
+          </div>
+      @endif
+
+      @if ($message = Session::get('error'))
+          <div class="col-lg-12 mt-2">
+              <div class="alert alert-danger alert-block text-center">
+                  <button type="button" class="close" data-dismiss="alert">×</button>
+                  <strong>{{ $message }}</strong>
+              </div>
+          </div>
+      @endif
+          <div class="row align-items-center">
+            <div class="col-md-12">
+
+               <form id="contactForm" action="{{ url('save-contact') }}" method="POST">
+                  @csrf
+                  <div class="row">
+                     <div class="col-lg-12 col-md-12">
+                        <div class="form-group">
+                           <input type="text" name="name" placeholder="Your Name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}">
+
+                           @error('name')
+
+                          <div class="invalid-feedback" style="display:block">
+                              {{ $message }}
+                          </div>
+                          @enderror
+
+                        </div>
+                     </div>
+                     <div class="col-lg-6 col-md-6">
+                        <div class="form-group">
+                           <input type="text" name="email" placeholder="Your email address" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}">
+                           @error('email')
+
+                           <div class="invalid-feedback" style="display:block">
+                               {{ $message }}
+                           </div>
+                           @enderror
+                        </div>
+                     </div>
+                     <div class="col-lg-6 col-md-6">
+                        <div class="form-group">
+                           <input type="text" name="phone" placeholder="Your phone number" class="form-control @error('phone') is-invalid @enderror" value="{{ old('phone') }}">
+                           @error('phone')
+
+                           <div class="invalid-feedback" style="display:block">
+                               {{ $message }}
+                           </div>
+                           @enderror
+                        </div>
+                     </div>
+                     <div class="col-lg-12 col-md-12">
+                        <div class="form-group">
+                           <input type="text" name="subject" placeholder="Your Subject" class="form-control @error('subject') is-invalid @enderror" value="{{ old('subject') }}">
+
+                           @error('subject')
+
+                           <div class="invalid-feedback" style="display:block">
+                               {{ $message }}
+                           </div>
+                           @enderror
+
+                        </div>
+                     </div>
+                     <div class="col-lg-12 col-md-12">
+                        <div class="form-group">
+                           <textarea name="message" cols="30" rows="5" placeholder="Write your message..." class="form-control @error('message') is-invalid @enderror">{{ old('message') }}</textarea>
+                           @error('message')
+
+                           <div class="invalid-feedback" style="display:block">
+                               {{ $message }}
+                           </div>
+                           @enderror
+                        </div>
+                     </div>
+                     <div class="col-lg-12 col-sm-12"><button type="submit" class="btn btn-primary">Send Message</button></div>
+                  </div>
+               </form>
+            </div>
+         </div>
        </div>
     </div>
  </div>

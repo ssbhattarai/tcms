@@ -35,6 +35,7 @@
                 <a class="dropdown-item" href="{{url('/admin/homepage')}}">Logo & Homepage Slider</a>
                 <a class="dropdown-item" href="{{url('/admin/script')}}">Script</a>
                  <a class="dropdown-item" href="{{url('/admin/infos')}}">Info Pages</a>
+                 <a class="dropdown-item" href="{{url('/admin/team')}}">Our Team</a>
               </div>
             </li>
 

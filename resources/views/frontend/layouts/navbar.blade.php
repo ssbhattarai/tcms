@@ -26,7 +26,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item"><a class="nav-link {{ Route::current()->uri == 'our-team' ? 'active' : '' }}" href="/our-team/">Our Team</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/about-2/">Portfolio</a></li>
+                                <li class="nav-item"><a class="nav-link {{ Route::current()->uri == 'portfolio' ? 'active' : '' }}" href="/portfolio">Portfolio</a></li>
                                 {{-- <li class="nav-item"><a class="nav-link" href="/about-3/">About Style 3</a></li> --}}
                             </ul>
                         </li>

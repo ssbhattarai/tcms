@@ -21,6 +21,7 @@
  </div>
  <div class="blog-area ptb-80">
     <div class="container">
+        @if(count($blog) > 0)
        <div class="row">
            @foreach ($blog as $b)
             <div class="col-lg-4 col-md-6">
@@ -46,6 +47,11 @@
             </div>
            @endforeach
        </div>
+       @else
+
+       <h3>No Blogs published</h3>
+
+       @endif
     </div>
     <div class="shape2 rotateme"><img src="{{ asset('frontend/fonts/shape2.svg') }}" alt="shape"></div>
     <div class="shape3"><img src="{{ asset('frontend/fonts/shape3.svg') }}" alt="shape"></div>

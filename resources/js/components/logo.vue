@@ -3,9 +3,9 @@
         <a href="/">
             <img
                 id="nav-logo"
-                class="col-12"
+                class="col-10"
                 :src="image"
-                alt="Grill and Bakes"
+                alt="Logos"
             />
         </a>
     </div>
