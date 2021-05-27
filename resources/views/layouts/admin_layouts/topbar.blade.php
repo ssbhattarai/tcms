@@ -42,11 +42,18 @@
             <li class="nav-item dropdown">
               <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="media align-items-center">
-                  <span class="avatar rounded-circle bg-light">
-                    <img  src="/assets/images/logo.png" class=" rounded-circle" style="width:100%" alt="">
-                  </span>
+                  <a class="dropdown-item" href="{{ route('logout') }}"
+                  onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                 <span>Logout</span> &nbsp;<i class="fas fa-sign-out-alt"></i>
+              </a>
+
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                  @csrf
+              </form>
+
                   <div class="media-body  ml-2  d-none d-lg-block">
-                    <span class="mb-0 text-sm  font-weight-bold">{{auth()->user()->name}}</span>
+                    {{-- <span class="mb-0 text-sm  font-weight-bold">{{auth()->user()->name}}</span> --}}
                   </div>
                 </div>
               </a>

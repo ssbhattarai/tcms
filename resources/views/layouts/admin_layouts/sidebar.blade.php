@@ -36,7 +36,7 @@
                 <a class="dropdown-item" href="{{url('/admin/script')}}">Script</a>
                  <a class="dropdown-item" href="{{url('/admin/infos')}}">Info Pages</a>
                  <a class="dropdown-item" href="{{url('/admin/team')}}">Our Team</a>
-                 <a class="dropdown-item" href="{{url('/admin/faqs')}}">Faqs</a>
+                 {{-- <a class="dropdown-item" href="{{url('/admin/faqs')}}">Faqs</a> --}}
               </div>
             </li>
             <li class="nav-item">

@@ -227,7 +227,7 @@
         </div>
     </div>
 </div>
-<div class="team-area repair-team-area pt-80 pb-50 bg-f9f6f6">
+{{-- <div class="team-area repair-team-area pt-80 pb-50 bg-f9f6f6">
     <div class="container">
         <div class="section-title">
             <h2>Our Awesome Team</h2>
@@ -462,7 +462,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 {{-- <section class="feedback-area ptb-80 bg-f7fafd">
     <div class="container">
         <div class="section-title">
