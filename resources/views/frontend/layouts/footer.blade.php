@@ -3,13 +3,13 @@
         <div class="row">
             <div class="col-lg-3 col-md-6">
                 <div class="single-footer-widget">
-                    <div class="logo"><a href="/it-startup/"><img src="images/logo.png" alt="logo"></a></div>
+                    <div class="logo"><a href="/"><img src="{{ asset('images/logo.png') }}" alt="logo" class="image-logo"></a></div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                         ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
                         ullamco laboris nisi.</p>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6">
+            {{-- <div class="col-lg-3 col-md-6">
                 <div class="single-footer-widget pl-5">
                     <h3>Company</h3>
                     <ul class="list">
@@ -20,7 +20,7 @@
                         <li><a href="/blog-1/">Latest News</a></li>
                     </ul>
                 </div>
-            </div>
+            </div> --}}
             <div class="col-lg-3 col-md-6">
                 <div class="single-footer-widget">
                     <h3>Support</h3>
@@ -28,7 +28,7 @@
                         <li><a href="/faqs">FAQ&#x27;s</a></li>
                         <li><a href="/privacy-policy/">Privacy Policy</a></li>
                         <li><a href="/term-condition/">Terms &amp; Condition</a></li>
-                        <li><a href="/team/">Team</a></li>
+                        <li><a href="/our-team/">Team</a></li>
                         <li><a href="/contact/">Contact Us</a></li>
                     </ul>
                 </div>

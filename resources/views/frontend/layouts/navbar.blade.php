@@ -2,7 +2,7 @@
     <div class="startp-nav">
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-light">
-                <a class="navbar-brand" href="/"><img src="{{ asset('frontend/images/logo.png') }}" alt="logo"></a><button
+                <a class="navbar-brand" href="/"><img src="{{ asset('images/logo.png') }}" alt="logo" class="image-logo"></a><button
                     class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation"><span
@@ -26,7 +26,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item"><a class="nav-link {{ Route::current()->uri == 'our-team' ? 'active' : '' }}" href="/our-team/">Our Team</a></li>
-                                <li class="nav-item"><a class="nav-link {{ Route::current()->uri == 'portfolio' ? 'active' : '' }}" href="/portfolio">Portfolio</a></li>
+                                <li class="nav-item"><a class="nav-link {{ Route::current()->uri == 'services' ? 'active' : '' }}" href="/services">Services</a></li>
                                 {{-- <li class="nav-item"><a class="nav-link" href="/about-3/">About Style 3</a></li> --}}
                             </ul>
                         </li>

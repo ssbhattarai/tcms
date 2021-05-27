@@ -23,6 +23,8 @@ Vue.component("category", require("./backend/service/category").default);
 // users
 Vue.component("users", require("./backend/users/users").default);
 
+//services
+Vue.component('service-component', require('./backend/settings/service/Service').default);
 
 
 // global components
@@ -35,6 +37,20 @@ Vue.use(FlashMessage);
 Vue.use(require("vue-moment"));
 
 
+
+
+import { ValidationProvider } from 'vee-validate';
+
+
+
+// Register it globally
+Vue.component('ValidationProvider', ValidationProvider);
+
+
+// You need a specific loader for CSS files like https://github.com/webpack/css-loader
+import 'v-toaster/dist/v-toaster.css'
+import Vue from "vue";
+
 Vue.component('pagination', require('laravel-vue-pagination'));
 
 
@@ -44,6 +60,19 @@ require('moment/locale/es-us')
 Vue.use(require('vue-moment'), {
     moment
 })
+
+import Toaster from 'v-toaster'
+
+// You need a specific loader for CSS files like https://github.com/webpack/css-loader
+import 'v-toaster/dist/v-toaster.css'
+
+// optional set default imeout, the default is 10000 (10 seconds).
+Vue.use(Toaster, {timeout: 5000})
+
+import VueConfirmDialog from 'vue-confirm-dialog'
+
+Vue.use(VueConfirmDialog)
+
 
 const app = new Vue({
     el: "#app"

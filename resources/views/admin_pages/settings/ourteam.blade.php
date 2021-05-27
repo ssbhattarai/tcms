@@ -62,71 +62,74 @@
                                     </form>
                                 </div>
                                 <div class="col">
-                                    <button type="button" class="btn btn-outline-default btn-sm"  data-toggle="modal" data-target="#editModal{{ $team->id }}">Edit</button>
+                                    {{-- <button type="button" class="btn btn-outline-default btn-sm"  data-toggle="modal" data-target="#editModal{{ $team->id }}">Edit</button> --}}
+                                    {{-- <a href="" id="editCompany" data-toggle="modal" data-target='#practice_modal' data-id="{{ $team->id }}">Edit</a> --}}
+
                                 </div>
                             </div>
                         </td>
                     </tr>
 
-                    <div class="modal fade" id="editModal{{ $team->id }}" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title" id="editModalLabel">Edit Member</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                            <div class="modal-body">
-                                <form method="POST" action="{{ route('team.update', $team->id) }}" enctype="multipart/form-data">
-                                    @csrf
-                                    <div class="form-group">
-                                        <label for="name" class="form-control-label">Name</label>
-                                        <input class="form-control @error('name') is-invalid @enderror" type="text" value="{{ $team->name }}" id="name" name="name">
-                                        @error('name')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                          </div>
-                                        @enderror
-                                    </div>
 
-                                    <div class="form-group">
-                                        <label for="post" class="form-control-label">Post</label>
-                                        <input class="form-control @error('post') is-invalid @enderror" type="text" value="{{ $team->post }}" id="post" name="post">
-                                        @error('post')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                          </div>
-                                        @enderror
-                                    </div>
+                      <div class="modal fade" id="practice_modal">
+                         <div class="modal-dialog modal-dialog-centered" role="document">
+                             <div class="modal-content">
+                               <div class="modal-header">
+                                 <h5 class="modal-title" id="editModalLabel">Edit Member</h5>
+                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                   <span aria-hidden="true">&times;</span>
+                                 </button>
+                               </div>
+                               <div class="modal-body">
+                                   <form method="POST" action="{{ route('team.update', $team->id) }}" enctype="multipart/form-data">
+                                       @csrf
+                                       @method('PATCH')
+                                       <div class="form-group">
+                                           <label for="name" class="form-control-label">Name</label>
+                                           <input class="form-control @error('name') is-invalid @enderror" type="text" value="{{ $team->name }}" id="name" name="name">
+                                           @error('name')
+                                           <div class="invalid-feedback">
+                                               {{ $message }}
+                                             </div>
+                                           @enderror
+                                       </div>
 
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input @error('image') is-invalid @enderror" id="customFileLang" lang="en" name="image" value="{{ old('image') }}">
-                                        @error('image')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                          </div>
-                                        @enderror
-                                        <label class="custom-file-label" for="customFileLang">Select file</label>
+                                       <div class="form-group">
+                                           <label for="post" class="form-control-label">Post</label>
+                                           <input class="form-control @error('post') is-invalid @enderror" type="text" value="{{ $team->post }}" id="post" name="post">
+                                           @error('post')
+                                           <div class="invalid-feedback">
+                                               {{ $message }}
+                                             </div>
+                                           @enderror
+                                       </div>
 
-                                    </div>
-                                    <br> <br>
-                                    <div class="form-group">
+                                       <div class="custom-file">
+                                           <input type="file" class="custom-file-input @error('image') is-invalid @enderror" id="customFileLang" lang="en" name="image" value="{{ old('image') }}">
+                                           @error('image')
+                                           <div class="invalid-feedback">
+                                               {{ $message }}
+                                             </div>
+                                           @enderror
+                                           <label class="custom-file-label" for="customFileLang">Select file</label>
 
-                                        <label class="custom-toggle">
-                                            <input type="checkbox" {{ $team->status ? 'checked' : '' }} name="status">
-                                            <span class="custom-toggle-slider rounded-circle" data-label-off="No" data-label-on="Yes" ></span>
-                                        </label>
-                                    </div>
+                                       </div>
+                                       <br> <br>
+                                       <div class="form-group">
 
-                                    <button type="submit" class="btn btn-primary">Update</button>
-                                </form>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                                           <label class="custom-toggle">
+                                               <input type="checkbox" {{ $team->status ? 'checked' : '' }} name="status">
+                                               <span class="custom-toggle-slider rounded-circle" data-label-off="No" data-label-on="Yes" ></span>
+                                           </label>
+                                       </div>
 
-                    @endforeach
+                                       <button type="submit" class="btn btn-primary">Update</button>
+                                   </form>
+                               </div>
+                             </div>
+                           </div>
+                     </div>
+                      @endforeach
                 </tbody>
              </table>
 

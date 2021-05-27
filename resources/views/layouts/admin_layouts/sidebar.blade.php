@@ -36,8 +36,15 @@
                 <a class="dropdown-item" href="{{url('/admin/script')}}">Script</a>
                  <a class="dropdown-item" href="{{url('/admin/infos')}}">Info Pages</a>
                  <a class="dropdown-item" href="{{url('/admin/team')}}">Our Team</a>
+                 <a class="dropdown-item" href="{{url('/admin/faqs')}}">Faqs</a>
               </div>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('/admin/services/')}}">
+                    <i class="fas fa-list-ul"></i>
+                  <span class="nav-link-text">Services</span>
+                </a>
+              </li>
 
             {{-- <li class="nav-item">
               <a class="nav-link" href="{{url('/admin/users')}}">

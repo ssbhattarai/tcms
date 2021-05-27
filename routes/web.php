@@ -28,12 +28,11 @@ Route::post('/reservation/save', [App\Http\Controllers\Frontend\FrontendControll
 
 // blogs
 Route::get('/blog', [App\Http\Controllers\Frontend\FrontendController::class, 'Blog']);
-Route::get('/blog/{slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'BlogDetail'])->name('blog.view');
+Route::get('/blog/{slug}', [])->name('blog.view');
 Route::post('/get-blog-category', [App\Http\Controllers\Frontend\FrontendController::class, 'getBlogByCategory']);
 
-Route::post('/get-product/', [App\Http\Controllers\Frontend\Product\ProductController::class, 'getAllProduct']);
-Route::post('/get-latest-recipies/', [App\Http\Controllers\Frontend\Product\ProductController::class, 'getLatestRecipies']);
-Route::get('/get-all-categories', [App\Http\Controllers\Frontend\Product\ProductController::class, 'getCategories']);
+
+
 Route::get('/category/{blogcategory}', [App\Http\Controllers\Frontend\FrontendController::class, 'blogCategory']);
 Route::post('/get-blog-category', [App\Http\Controllers\Frontend\FrontendController::class, 'getBlogByCategory']);
 
@@ -42,17 +41,18 @@ Route::get('/menu', [App\Http\Controllers\Frontend\FrontendController::class, 'M
 Route::get('/menu/{cat_name}', [App\Http\Controllers\Frontend\FrontendController::class, 'MenuCategoryView']);
 
 // cart
-Route::get('/cart', [App\Http\Controllers\Frontend\Product\CartController::class, 'viewCart']);
-Route::get('/cart/get-all', [App\Http\Controllers\Frontend\Product\CartController::class, 'getAllCartItems']);
-Route::get('/cart/add/{product_id}', [App\Http\Controllers\Frontend\Product\CartController::class, 'addToCart']);
-Route::get('/cart/delete/{product_id}', [App\Http\Controllers\Frontend\Product\CartController::class, 'deleteItem']);
+// Route::get('/cart', [App\Http\Controllers\Frontend\Product\CartController::class, 'viewCart']);
+// Route::get('/cart/get-all', [App\Http\Controllers\Frontend\Product\CartController::class, 'getAllCartItems']);
+// Route::get('/cart/add/{product_id}', [App\Http\Controllers\Frontend\Product\CartController::class, 'addToCart']);
+// Route::get('/cart/delete/{product_id}', [App\Http\Controllers\Frontend\Product\CartController::class, 'deleteItem']);
 Auth::routes();
 
 //our team
 Route::get('/our-team', [App\Http\Controllers\Frontend\FrontendController::class, 'ourteam']);
 
 // portfolio
-Route::get('/portfolio', [App\Http\Controllers\Frontend\FrontendController::class, 'portfolio']);
+Route::get('/services', [App\Http\Controllers\Frontend\FrontendController::class, 'services']);
+Route::get('/service/{slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'servicedetails']);
 
 
 //faqs

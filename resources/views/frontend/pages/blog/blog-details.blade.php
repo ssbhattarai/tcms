@@ -160,7 +160,7 @@
                    </form>
                 </div>
                 <div class="widget widget_startp_posts_thumb">
-                   <h3 class="widget-title">Latest Posts</h3>
+                   <h3 class="widget-title">Read More</h3>
                    @foreach ($recent as $r)
                     <article class="item">
                         <a class="thumb" href="{{ route('blog.view', $r->slug) }}"><span class="fullimage cover bg1" role="img"></span></a>
@@ -173,7 +173,7 @@
                    @endforeach
 
                 </div>
-                {{-- <div class="widget widget_categories">
+                <div class="widget widget_categories">
                    <h3 class="widget-title">Categories</h3>
                    <ul>
                       <li><a href="#">Business</a></li>
@@ -182,7 +182,7 @@
                       <li><a href="#">Tips</a></li>
                       <li><a href="#">Uncategorized</a></li>
                    </ul>
-                </div> --}}
+                </div>
                 {{-- <div class="widget widget_tag_cloud">
                    <h3 class="widget-title">Tags</h3>
                    <div class="tagcloud"><a href="#">IT <span class="tag-link-count">(3)</span></a><a href="#">Spacle <span class="tag-link-count">(3)</span></a><a href="#">Games <span class="tag-link-count">(2)</span></a><a href="#">Fashion <span class="tag-link-count">(2)</span></a><a href="#">Travel <span class="tag-link-count">(1)</span></a><a href="#">Smart <span class="tag-link-count">(1)</span></a><a href="#">Marketing <span class="tag-link-count">(1)</span></a><a href="#">Tips <span class="tag-link-count">(2)</span></a></div>

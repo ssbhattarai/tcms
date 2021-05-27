@@ -463,7 +463,7 @@
         </div>
     </div>
 </div>
-<section class="feedback-area ptb-80 bg-f7fafd">
+{{-- <section class="feedback-area ptb-80 bg-f7fafd">
     <div class="container">
         <div class="section-title">
             <h2>What users Saying</h2>
@@ -921,7 +921,7 @@
     <div class="shape6 rotateme"><img src="{{ asset('frontend/fonts/shape4.svg') }}" alt="shape"></div>
     <div class="shape7"><img src="{{ asset('frontend/fonts/shape4.svg') }}" alt="shape"></div>
     <div class="shape8 rotateme"><img src="{{ asset('frontend/fonts/shape2.svg') }}" alt="shape"></div>
-</section>
+</section> --}}
 <div class="iot-why-choose-us pt-80">
     <div class="container">
         <div class="section-title">
@@ -982,7 +982,7 @@
         </div>
     </div>
 </div>
-<div class="blog-area pt-80 pb-50">
+{{-- <div class="blog-area pt-80 pb-50">
     <div class="container">
         <div class="section-title">
             <h2>The News from Our Blog</h2>
@@ -1092,5 +1092,5 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 @endsection

@@ -11,6 +11,7 @@ use App\Models\Info;
 use App\Models\Product;
 use App\Models\Reservation;
 use App\Models\Script;
+use App\Models\Service;
 use App\Models\Slider;
 use App\Models\Team;
 use App\Models\User;
@@ -105,7 +106,7 @@ class FrontendController extends BaseController
 
 
         SEOMeta::setTitle($blog->title);
-        SEOMeta::setDescription($blog->description);
+        SEOMeta::setDescription($blog->blog_introduction);
         SEOMeta::addMeta('article:published_time', $blog->created_at->toW3CString(), 'property');
         SEOMeta::addMeta('article:section', $blog->category->name, 'property');
         SEOMeta::addKeyword(['blog1', 'blog1', 'key3']);
@@ -206,18 +207,56 @@ class FrontendController extends BaseController
 
     //portfolio
 
-    public function portfolio() {
+    public function services() {
 
-        SEOTools::setTitle('Our Team - Thoplo machine');
-        SEOTools::setDescription('Our Team');
+        SEOTools::setTitle('Services - Thoplo machine');
+        SEOTools::setDescription('Our Services');
         SEOTools::opengraph()->setUrl('http://thoplomachine.com');
         SEOTools::setCanonical('https://thoplomachine.com/our-team');
         SEOTools::opengraph()->addProperty('type', 'articles');
         SEOTools::twitter()->setSite('@thoplomachine');
         SEOTools::jsonLd()->addImage('https://codecasts.com.br/img/logo.jpg');
 
+        $service = Service::where('status', 1)->get();
+        return view('frontend.pages.service.services', compact('service'));
+    }
 
-        return view('frontend.pages.portfolio');
+    public function servicedetails($slug)
+    {
+        $b = Service::where('slug', $slug)->take(1)->get();
+        $recent = Service::take(6)->orderBy('id', 'desc')->where('status', 1)->whereNotIN('slug', [$b[0]->slug])->get();
+
+        $service = $b[0];
+
+
+        SEOMeta::setTitle($service->title);
+        SEOMeta::setDescription($service->service_introduction);
+        SEOMeta::addMeta('article:published_time', $service->created_at->toW3CString(), 'property');
+        SEOMeta::addMeta('article:section', $service->service_intro, 'property');
+        SEOMeta::addKeyword(['service1', 'service1', 'key3']);
+
+        OpenGraph::setDescription($service->description);
+        OpenGraph::setTitle($service->title);
+        OpenGraph::setUrl('http://current.url.com');
+        OpenGraph::addProperty('type', 'article');
+        OpenGraph::addProperty('locale', 'pt-br');
+        OpenGraph::addProperty('locale:alternate', ['pt-pt', 'ns']);
+
+        // OpenGraph::addImage($service->cover->url);
+        // OpenGraph::addImage($service->image->list('url'));
+        OpenGraph::addImage(['url' => 'http://image.url.com/cover.jpg', 'size' => 300]);
+        OpenGraph::addImage('http://image.url.com/cover.jpg', ['height' => 300, 'width' => 300]);
+
+        JsonLd::setTitle($service->title);
+        JsonLd::setDescription($service->description);
+        JsonLd::setType('Service');
+        // JsonLd::addImage($service->image->list('url'));
+
+
+        return view('frontend.pages.service.service-details', [
+            'service' => $service,
+            'recent' => $recent,
+        ]);
     }
 
     // info pages like - about us , terms and conditions-------------------
@@ -338,6 +377,7 @@ class FrontendController extends BaseController
 
         return view('frontend.pages.faqs');
     }
+
 
 
 

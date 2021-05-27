@@ -108,6 +108,12 @@ class TeamController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validate = $request->validate([
+            'name' => 'required|string',
+            'post' => 'required|string',
+            'image' =>'nullable|image|mimes:png,jpg'
+        ]);
+
         dd($id);
     }
 

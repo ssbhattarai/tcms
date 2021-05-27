@@ -15,14 +15,30 @@
 
         <!--add form -->
         <div class="add-blog mb-5 shadow p-3 " v-if="showAddForm">
+            <ValidationObserver v-slot="{ invalid, validate }">
+            <form @submit.prevent="validate().then(submitForm)">
             <div class="row">
                 <div class="form-group col-10">
                     <label>Title</label>
+                <ValidationProvider rules="required" v-slot="{ errors }" slim name="title">
                     <input
                         class="form-control form-control-sm"
                         type="text"
                         v-model="form.title"
                     />
+                    <span class="help-text text-danger">{{ errors[0] }}</span>
+                </ValidationProvider>
+                </div>
+                <div class="form-group col-10">
+                    <label>Blog Intro</label>
+                <ValidationProvider rules="required|max:120" v-slot="{ errors }" slim name="blog intro">
+
+                    <textarea
+                        class="form-control form-control-sm"
+                        v-model="form.blogIntroduction"
+                    ></textarea>
+                    <span class="help-text text-danger">{{ errors[0] }}</span>
+                </ValidationProvider>
                 </div>
                 <div class="form-group col-2">
                     <label>Featured</label>
@@ -41,6 +57,7 @@
                     <label class="text-danger font-italic">
                         * limit 1 Image</label
                     ><br />
+
                     <input
                         class="form-control form-control-sm"
                         @change="previewImage"
@@ -64,6 +81,8 @@
 
                 <div class="form-group col-6">
                     <label>Category</label>
+                <ValidationProvider rules="required|max:120" v-slot="{ errors }" slim name="blog intro">
+
                     <select
                         class="form-control form-control-sm"
                         v-model="form.category_id"
@@ -75,6 +94,8 @@
                             >{{ c.name }}</option
                         >
                     </select>
+                    <span class="help-text text-danger">{{ errors[0] }}</span>
+                </ValidationProvider>
                 </div>
                 <div class="form-group col-6">
                     <label>Written By</label>
@@ -114,11 +135,13 @@
                 <button
                     type="submit"
                     class="btn btn-sm btn-primary"
-                    @click="submitForm"
+                    :disabled="invalid"
                 >
                     Submit
                 </button>
             </div>
+            </form>
+            </ValidationObserver>
         </div>
 
         <!--   lisiting table     -->
@@ -242,12 +265,18 @@
 </template>
 
 <script>
+
+import { ValidationProvider, ValidationObserver } from 'vee-validate/dist/vee-validate.full';
+
+
 import Editor from "@tinymce/tinymce-vue";
 import moment from 'moment'
 
 export default {
     components: {
-        editor: Editor
+        editor: Editor,
+        ValidationProvider,
+        ValidationObserver
     },
     data() {
         return {
@@ -268,7 +297,8 @@ export default {
                 category_id: "",
 
                 editId: "",
-                prevImages: ""
+                prevImages: "",
+                blogIntroduction: ""
             },
 
             items: [],
@@ -376,6 +406,7 @@ export default {
             formData.append("category_id", this.form.category_id);
             formData.append("written_by", this.form.written_by);
             formData.append("prev_image", this.form.prevImages);
+            formData.append('blog_introduction', this.form.blogIntroduction);
             const config = {
                 "content-type": "multipart/form-data"
             };
@@ -461,9 +492,9 @@ export default {
             this.form.featured = data.featured;
             this.form.description = data.description;
 
-            this.form.category = data.category;
+            this.form.category_id = data.category_id;
             this.form.written_by = data.written_by;
-
+            this.form.blogIntroduction = data.blog_introduction;
             //previous image show
             const prev_image = data.image;
             this.demoImage.push("/storage/" + prev_image);

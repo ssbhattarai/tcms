@@ -19,14 +19,6 @@ class BlogController extends BaseController
      */
     public function index()
     {
-        SEOTools::setTitle('Home');
-        SEOTools::setDescription('This is my page description');
-        SEOTools::opengraph()->setUrl('http://current.url.com');
-        SEOTools::setCanonical('https://codecasts.com.br/lesson');
-        SEOTools::opengraph()->addProperty('type', 'articles');
-        SEOTools::twitter()->setSite('@digitalterai');
-        SEOTools::jsonLd()->addImage('https://codecasts.com.br/img/logo.jpg');
-
         return view('admin_pages.blogs.blogs');
     }
 
@@ -66,6 +58,7 @@ class BlogController extends BaseController
             'featured' => 'required',
             'written_by' => 'required|string',
             'description' => 'required|string',
+            'blog_introduction' => 'required|string|max:100',
             'image' => 'required',
         ]);
         // dd($request->hasfile('image'));
@@ -82,6 +75,7 @@ class BlogController extends BaseController
             $store->category_id = $request->category_id;
             $store->description = $request->description;
             $store->written_by = $request->written_by;
+            $store->blog_introduction = $request->blog_introduction;
             $store->image = $i;
 
             $store->save();
@@ -112,6 +106,7 @@ class BlogController extends BaseController
             'title' => 'required|string',
             'category_id' => 'required',
             'featured' => 'required',
+            'blog_introduction' => 'required|string|max:100',
             'written_by' => 'required|string',
             'description' => 'required|string',
             'prev_image' => 'required|string',
@@ -131,6 +126,8 @@ class BlogController extends BaseController
         $store->title = $request->title;
         $store->category_id = $request->category_id;
         $store->featured = $request->featured;
+
+        $store->blog_introduction = $request->blog_introduction;
 
         $store->description = $request->description;
         $store->written_by = $request->written_by;
