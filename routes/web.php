@@ -30,6 +30,7 @@ Route::post('/reservation/save', [App\Http\Controllers\Frontend\FrontendControll
 Route::get('/blog', [App\Http\Controllers\Frontend\FrontendController::class, 'Blog']);
 Route::get('/blog/{slug}', [])->name('blog.view');
 Route::post('/get-blog-category', [App\Http\Controllers\Frontend\FrontendController::class, 'getBlogByCategory']);
+Route::get('/blog/{slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'BlogDetail']);
 
 
 

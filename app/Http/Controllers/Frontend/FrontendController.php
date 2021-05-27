@@ -128,12 +128,11 @@ class FrontendController extends BaseController
         JsonLd::setType('Article');
         // JsonLd::addImage($blog->image->list('url'));
 
-        $category = Category::take(5)->where('status',1)->get();
+        // $category = Category::take(5)->where('status',1)->get();
         return view('frontend.pages.blog.blog-details', [
             'blog' => $blog,
             'related' => $related,
-            'recent' => $recent,
-            'category' =>$category
+            'recent' => $recent
         ]);
     }
 
