@@ -36,6 +36,8 @@ Vue.use(BootstrapVue);
 Vue.use(FlashMessage);
 Vue.use(require("vue-moment"));
 
+require('../assets/vendor/MediaManager/js/manager')
+
 
 
 
@@ -72,6 +74,7 @@ Vue.use(Toaster, {timeout: 5000})
 import VueConfirmDialog from 'vue-confirm-dialog'
 
 Vue.use(VueConfirmDialog)
+require('../assets/vendor/MediaManager/js/manager')
 
 
 const app = new Vue({

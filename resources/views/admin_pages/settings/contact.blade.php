@@ -42,27 +42,27 @@
                         <button class="btn btn-sm btn-primary" type="button" data-toggle="modal" data-target="#LogoModal">
                             <i class="fa fa-plus"></i>
                         </button>
-                    </div>  
-                @else  
+                    </div>
+                @else
                     <div class="p-3">
                         <button class="btn btn-sm btn-primary" type="button" data-toggle="modal" data-target="#LogoEditModal">
                             <i class="fa fa-edit"></i>
                         </button>
-                    </div>                
-               @endif            
+                    </div>
+               @endif
             </div>
 
             @if ($map->count() !== 0)
                 <div class="logo mb-3">
                     {!!$map[0]->name !!}
-                </div>                
+                </div>
             @endif
 
         </section>
 
 
 
-        {{-- logo add modal --}}     
+        {{-- logo add modal --}}
     <div class="modal fade" id="LogoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -72,7 +72,7 @@
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">                    
+                <div class="modal-body">
                     <form action="{{url('/admin/map')}}" method="POST" >
                         @csrf
                         <div class="form-group">
@@ -85,12 +85,12 @@
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </form>
-                </div>                
+                </div>
             </div>
         </div>
     </div>
 
-    {{-- logo add modal --}}     
+    {{-- logo add modal --}}
     <div class="modal fade" id="LogoEditModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -100,26 +100,26 @@
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">                    
+                <div class="modal-body">
                     <form action="{{url('/admin/map/update')}}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        
+
                         <div class="form-group">
                             <label>Map</label>
                             <textarea class="form-control" name="map" rows="3"></textarea>
                         </div>
                         @if ($map->count() !== 0)
-                        <input type="text" name="id" value="{{$map[0]->id}}" hidden>   
+                        <input type="text" name="id" value="{{$map[0]->id}}" hidden>
                         @endif
-                            
-                       
+
+
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </form>
-                </div>                
+                </div>
             </div>
         </div>
     </div>
@@ -128,17 +128,17 @@
 
     </div>
 
-   
-
-   
 
 
-    
 
 
-   
 
 
-    
-    
+
+
+
+
+
+
+
 @endsection

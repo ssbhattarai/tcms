@@ -70,7 +70,7 @@
                     </ul>
                     <ul class="social-links">
                         <li>
-                            <a class="facebook" target="_blank" href="/iot/#">
+                            <a class="facebook" target="_blank" href="https://www.facebook.com/thoplomachine">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round">
@@ -118,7 +118,7 @@
             <div class="col-lg-12 col-md-12">
                 <div class="copyright-area">
                     <p>
-                        Copyright © 2021 All rights reserved by <a href="https://digitalterai.com/" >Digital</a>
+                        Copyright © 2021 All rights reserved by <a href="http://thoplomachine.com/" >Thopo Machine</a>
                     </p>
                 </div>
             </div>

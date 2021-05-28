@@ -23,3 +23,7 @@ const mix = require('laravel-mix');
  .sass("resources/sass/infos.scss", "public/css")
  .sass("resources/sass/about.scss", "public/css")
  .sass("resources/sass/index.scss", "public/css")
+
+// MediaManager
+mix.sass('resources/assets/vendor/MediaManager/sass/manager.scss', 'public/assets/vendor/MediaManager/style.css')
+    .copyDirectory('resources/assets/vendor/MediaManager/dist', 'public/assets/vendor/MediaManager')

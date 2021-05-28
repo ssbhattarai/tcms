@@ -57,3 +57,7 @@ Route::get('/faqs', [App\Http\Controllers\Frontend\FrontendController::class, 'f
 Route::get('/privacy-policy', [App\Http\Controllers\Frontend\FrontendController::class, 'privacypolicy']);
 Route::get('/term-condition', [App\Http\Controllers\Frontend\FrontendController::class, 'termscondition']);
 Route::get('/about-us', [App\Http\Controllers\Frontend\FrontendController::class, 'aboutus']);
+
+
+// MediaManager
+ctf0\MediaManager\MediaRoutes::routes();

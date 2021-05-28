@@ -43,7 +43,7 @@ module Jekyll
       'detach'        => false,          # default to not detaching the server
       'port'          => '4000',
       'host'          => '127.0.0.1',
-      'baseurl'       => '',
+      'baseurl'       => 'localhost:8000',
 
       # Backwards-compatibility options
       'relative_permalinks' => false,

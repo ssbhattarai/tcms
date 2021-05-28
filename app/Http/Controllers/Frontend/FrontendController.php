@@ -31,11 +31,11 @@ class FrontendController extends BaseController
     {
         SEOTools::setTitle('Home - Thoplo Machine');
         SEOTools::setDescription('Home page of Thopolo Machine PVT LTD');
-        SEOTools::opengraph()->setUrl('http://thoplo.com');
-        SEOTools::setCanonical('https://thoplo.com');
+        SEOTools::opengraph()->setUrl('http://thoplomachine.com/');
+        SEOTools::setCanonical('http://thoplomachine.com/');
         SEOTools::opengraph()->addProperty('type', 'articles');
         SEOTools::twitter()->setSite('@thoplo');
-        SEOTools::jsonLd()->addImage('https://thoplo.com.br/img/logo.jpg');
+        SEOTools::jsonLd()->addImage('http://thoplomachine.com/');
 
 
         $slider = Slider::all();
@@ -112,13 +112,13 @@ class FrontendController extends BaseController
         OpenGraph::setDescription($blog->description);
         OpenGraph::setTitle($blog->title);
 
-        OpenGraph::setUrl('http://current.url.com');
+        OpenGraph::setUrl('http://thoplomachine.com/');
         OpenGraph::addProperty('type', 'article');
         OpenGraph::addProperty('locale', 'pt-br');
         OpenGraph::addProperty('locale:alternate', ['pt-pt', 'ns']);
 
-        OpenGraph::addImage(['url' => 'http://image.url.com/cover.jpg', 'size' => 300]);
-        OpenGraph::addImage('http://image.url.com/cover.jpg', ['height' => 300, 'width' => 300]);
+        OpenGraph::addImage(['url' => 'http://thoplomachine.com/', 'size' => 300]);
+        OpenGraph::addImage('http://thoplomachine.com/', ['height' => 300, 'width' => 300]);
 
         JsonLd::setTitle($blog->title);
         JsonLd::setDescription($blog->description);
@@ -170,13 +170,13 @@ class FrontendController extends BaseController
 
     public function Blog()
     {
-        SEOTools::setTitle('Blog Page');
+        SEOTools::setTitle('Blogs - Thoplo Machine');
         SEOTools::setDescription('All blogs lists');
-        SEOTools::opengraph()->setUrl('http://thoplomachine.com');
-        SEOTools::setCanonical('https://thoplomachine.com/blog');
+        SEOTools::opengraph()->setUrl('http://thoplomachine.com/');
+        SEOTools::setCanonical('http://thoplomachine.com/blog');
         SEOTools::opengraph()->addProperty('type', 'articles');
         SEOTools::twitter()->setSite('@thoplomachine');
-        SEOTools::jsonLd()->addImage('https://codecasts.com.br/img/logo.jpg');
+        SEOTools::jsonLd()->addImage('http://thoplomachine.com');
 
         $blog = Blog::with('category')->orderBy('id', 'desc')->get();
         return view('frontend.pages.blog.index', compact('blog'));
@@ -194,11 +194,11 @@ class FrontendController extends BaseController
 
         SEOTools::setTitle('Our Team - Thoplo machine');
         SEOTools::setDescription('Our Team');
-        SEOTools::opengraph()->setUrl('http://thoplomachine.com');
-        SEOTools::setCanonical('https://thoplomachine.com/our-team');
+        SEOTools::opengraph()->setUrl('http://thoplomachine.com/');
+        SEOTools::setCanonical('http://thoplomachine.com/our-team');
         SEOTools::opengraph()->addProperty('type', 'articles');
         SEOTools::twitter()->setSite('@thoplomachine');
-        SEOTools::jsonLd()->addImage('https://codecasts.com.br/img/logo.jpg');
+        SEOTools::jsonLd()->addImage('http://thoplomachine.com/');
 
         $activeteams = Team::where('status', 1)->get();
 
@@ -211,7 +211,7 @@ class FrontendController extends BaseController
 
         SEOTools::setTitle('Services - Thoplo machine');
         SEOTools::setDescription('Our Services');
-        SEOTools::opengraph()->setUrl('http://thoplomachine.com');
+        SEOTools::opengraph()->setUrl('http://thoplomachine.com/');
         SEOTools::setCanonical('https://thoplomachine.com/our-team');
         SEOTools::opengraph()->addProperty('type', 'articles');
         SEOTools::twitter()->setSite('@thoplomachine');
@@ -237,7 +237,7 @@ class FrontendController extends BaseController
 
         OpenGraph::setDescription($service->description);
         OpenGraph::setTitle($service->title);
-        OpenGraph::setUrl('http://current.url.com');
+        OpenGraph::setUrl('http://thoplomachine.com/');
         OpenGraph::addProperty('type', 'article');
         OpenGraph::addProperty('locale', 'pt-br');
         OpenGraph::addProperty('locale:alternate', ['pt-pt', 'ns']);
@@ -324,11 +324,11 @@ class FrontendController extends BaseController
 
         SEOTools::setTitle('Contact Us - Thoplo Machine');
         SEOTools::setDescription('Contact Address of Thoplo Machine');
-        SEOTools::opengraph()->setUrl('http://thoplo.com');
-        SEOTools::setCanonical('https://thoplo.com/contact');
+        SEOTools::opengraph()->setUrl('http://thoplomachine.com/');
+        SEOTools::setCanonical('http://thoplomachine.com/contact');
         SEOTools::opengraph()->addProperty('type', 'articles');
         SEOTools::twitter()->setSite('@thoplo');
-        SEOTools::jsonLd()->addImage('https://thoplo.com.br/img/logo.jpg');
+        SEOTools::jsonLd()->addImage('http://thoplomachine.com/');
 
         $map = Asset::where('type', 'map')->first();
 
@@ -369,11 +369,11 @@ class FrontendController extends BaseController
     {
         SEOTools::setTitle('Faqs - Thoplo Machine');
         SEOTools::setDescription('faqs');
-        SEOTools::opengraph()->setUrl('http://thoplo.com');
-        SEOTools::setCanonical('https://thoplo.com/faqs');
+        SEOTools::opengraph()->setUrl('http://thoplomachine.com/');
+        SEOTools::setCanonical('http://thoplomachine.com/faqs');
         SEOTools::opengraph()->addProperty('type', 'articles');
         SEOTools::twitter()->setSite('@thoplo');
-        SEOTools::jsonLd()->addImage('https://thoplo.com.br/img/logo.jpg');
+        SEOTools::jsonLd()->addImage('http://thoplomachine.com/');
 
         return view('frontend.pages.faqs');
     }
@@ -382,11 +382,11 @@ class FrontendController extends BaseController
     {
         SEOTools::setTitle('Blog Details - Thoplo Machines');
         SEOTools::setDescription('All blogs by Category');
-        SEOTools::opengraph()->setUrl('http://thoplomachine.com');
-        SEOTools::setCanonical('https://thoplomachine.com/blog');
+        SEOTools::opengraph()->setUrl('http://thoplomachine.com/');
+        SEOTools::setCanonical(`http://thoplomachine.com/blog/$catslug`);
         SEOTools::opengraph()->addProperty('type', 'articles');
         SEOTools::twitter()->setSite('@thoplomachine');
-        SEOTools::jsonLd()->addImage('https://codecasts.com.br/img/logo.jpg');
+        SEOTools::jsonLd()->addImage('http://thoplomachine.com/');
 
 
         $category = Category::where('slug', $catslug)->first();
@@ -400,11 +400,11 @@ class FrontendController extends BaseController
     {
         SEOTools::setTitle('Privacy Policy - Thoplo Machine');
         SEOTools::setDescription('Privacy Policy of Thopolo Machine PVT LTD');
-        SEOTools::opengraph()->setUrl('http://thoplo.com');
-        SEOTools::setCanonical('https://thoplo.com');
+        SEOTools::opengraph()->setUrl('http://thoplomachine.com/');
+        SEOTools::setCanonical('http://thoplomachine.com/privacy-policy');
         SEOTools::opengraph()->addProperty('type', 'articles');
         SEOTools::twitter()->setSite('@thoplo');
-        SEOTools::jsonLd()->addImage('https://thoplo.com.br/img/logo.jpg');
+        SEOTools::jsonLd()->addImage('http://thoplomachine.com/');
 
         $privacy = Info::where('slug', 'privacy-policy')->first();
         return view('frontend.pages.privacy', compact('privacy'));
@@ -414,8 +414,8 @@ class FrontendController extends BaseController
     {
         SEOTools::setTitle('Terms and Conditions - Thoplo Machine');
         SEOTools::setDescription('Terms and Conditions of Thopolo Machine PVT LTD');
-        SEOTools::opengraph()->setUrl('http://thoplo.com');
-        SEOTools::setCanonical('https://thoplo.com');
+        SEOTools::opengraph()->setUrl('http://thoplomachine.com/');
+        SEOTools::setCanonical('http://thoplomachine.com/term-condition');
         SEOTools::opengraph()->addProperty('type', 'articles');
         SEOTools::twitter()->setSite('@thoplo');
         SEOTools::jsonLd()->addImage('https://thoplo.com.br/img/logo.jpg');
@@ -428,8 +428,8 @@ class FrontendController extends BaseController
     {
         SEOTools::setTitle('About Us - Thoplo Machine');
         SEOTools::setDescription('About Us of Thopolo Machine PVT LTD');
-        SEOTools::opengraph()->setUrl('http://thoplo.com');
-        SEOTools::setCanonical('https://thoplo.com');
+        SEOTools::opengraph()->setUrl('http://thoplomachine.com/');
+        SEOTools::setCanonical('http://thoplomachine.com/about-us');
         SEOTools::opengraph()->addProperty('type', 'articles');
         SEOTools::twitter()->setSite('@thoplo');
         SEOTools::jsonLd()->addImage('https://thoplo.com.br/img/logo.jpg');
