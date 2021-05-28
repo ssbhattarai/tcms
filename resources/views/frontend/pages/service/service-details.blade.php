@@ -20,12 +20,9 @@
  </div>
  <div class="services-details-area ptb-80">
     <div class="container">
-       <div class="row align-items-center">
-          <div class="col-lg-6 services-details">
                 <h3>{{ $service->title }}</h3>
                 {!! $service->description !!}
-          </div>
-       </div>
+
        <div class="separate"></div>
     </div>
 
