@@ -56,4 +56,4 @@ Route::get('/service/{slug}', [App\Http\Controllers\Frontend\FrontendController:
 Route::get('/faqs', [App\Http\Controllers\Frontend\FrontendController::class, 'faqs']);
 Route::get('/privacy-policy', [App\Http\Controllers\Frontend\FrontendController::class, 'privacypolicy']);
 Route::get('/term-condition', [App\Http\Controllers\Frontend\FrontendController::class, 'termscondition']);
-
+Route::get('/about-us', [App\Http\Controllers\Frontend\FrontendController::class, 'aboutus']);

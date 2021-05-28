@@ -405,5 +405,10 @@ class FrontendController extends BaseController
         return view('frontend.pages.termscondition', compact('termscondition'));
 
     }
+    public function aboutus()
+    {
+        $aboutus = Info::where('slug', 'about-us')->first();
+        return view('frontend.pages.aboutus', compact('aboutus'));
+    }
 
 }

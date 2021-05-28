@@ -25,10 +25,13 @@
                                 </svg>
                             </a>
                             <ul class="dropdown-menu">
+                                <li class="nav-item"><a class="nav-link {{ Route::current()->uri == 'about-us' ? 'active' : '' }}" href="/about-us">About Us</a></li>
                                 <li class="nav-item"><a class="nav-link {{ Route::current()->uri == 'our-team' ? 'active' : '' }}" href="/our-team/">Our Team</a></li>
-                                <li class="nav-item"><a class="nav-link {{ Route::current()->uri == 'services' ? 'active' : '' }}" href="/services">Services</a></li>
                                 {{-- <li class="nav-item"><a class="nav-link" href="/about-3/">About Style 3</a></li> --}}
                             </ul>
+                        </li>
+                        <li class="nav-item">
+                            <li class="nav-item"><a class="nav-link {{ Route::current()->uri == 'services' ? 'active' : '' }}" href="/services">Services</a></li>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {{ Route::current()->uri == 'blog' ? 'active' : '' }}" href="/blog">
@@ -40,6 +43,9 @@
                         <li class="nav-item"><a class="nav-link {{ Route::current()->uri == 'contact' ? 'active' : '' }}" href="/contact/">Contact</a></li>
                     </ul>
                 </div>
+                <div class="others-option">
+                    <a class="btn btn-light" href="/contact/">Support</a>
+                 </div>
             </nav>
         </div>
     </div>
