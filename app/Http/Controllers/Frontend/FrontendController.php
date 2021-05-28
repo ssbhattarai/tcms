@@ -44,6 +44,8 @@ class FrontendController extends BaseController
         $menu_file = Asset::take(1)->where('type', 'menu_file')->first();
         // $blogs = Blog::take(8)->orderBy('id', 'desc')->get();
 
+        $services = Service::take(4)->where('status', 1)->where('is_featured', 'featured')->orderBy('id', 'desc')->get();
+
         $category = Category::take(6)->get();
         $script = Script::all();
 
@@ -58,6 +60,7 @@ class FrontendController extends BaseController
             'category' => $category,
             'menu_image' => $menu_image,
             'menu_file' => $menu_file,
+            'services' => $services
         ]);
     }
 
@@ -102,26 +105,26 @@ class FrontendController extends BaseController
 
 
         SEOMeta::setTitle($blog->title);
-        SEOMeta::setDescription($blog->blog_introduction);
+        SEOMeta::setDescription($blog->description);
         SEOMeta::addMeta('article:published_time', $blog->created_at->toW3CString(), 'property');
         SEOMeta::addMeta('article:section', $blog->category->name, 'property');
-        SEOMeta::addKeyword(['blog1', 'blog1', 'key3']);
 
         OpenGraph::setDescription($blog->description);
         OpenGraph::setTitle($blog->title);
+
         OpenGraph::setUrl('http://current.url.com');
         OpenGraph::addProperty('type', 'article');
         OpenGraph::addProperty('locale', 'pt-br');
         OpenGraph::addProperty('locale:alternate', ['pt-pt', 'ns']);
 
-        // OpenGraph::addImage($blog->cover->url);
-        // OpenGraph::addImage($blog->image->list('url'));
         OpenGraph::addImage(['url' => 'http://image.url.com/cover.jpg', 'size' => 300]);
         OpenGraph::addImage('http://image.url.com/cover.jpg', ['height' => 300, 'width' => 300]);
 
         JsonLd::setTitle($blog->title);
         JsonLd::setDescription($blog->description);
         JsonLd::setType('Article');
+
+
         // JsonLd::addImage($blog->image->list('url'));
 
         $category = Category::take(5)->where('status',1)->get();
@@ -395,18 +398,43 @@ class FrontendController extends BaseController
 
     public function privacypolicy()
     {
+        SEOTools::setTitle('Privacy Policy - Thoplo Machine');
+        SEOTools::setDescription('Privacy Policy of Thopolo Machine PVT LTD');
+        SEOTools::opengraph()->setUrl('http://thoplo.com');
+        SEOTools::setCanonical('https://thoplo.com');
+        SEOTools::opengraph()->addProperty('type', 'articles');
+        SEOTools::twitter()->setSite('@thoplo');
+        SEOTools::jsonLd()->addImage('https://thoplo.com.br/img/logo.jpg');
+
         $privacy = Info::where('slug', 'privacy-policy')->first();
         return view('frontend.pages.privacy', compact('privacy'));
     }
 
     public function termscondition()
     {
+        SEOTools::setTitle('Terms and Conditions - Thoplo Machine');
+        SEOTools::setDescription('Terms and Conditions of Thopolo Machine PVT LTD');
+        SEOTools::opengraph()->setUrl('http://thoplo.com');
+        SEOTools::setCanonical('https://thoplo.com');
+        SEOTools::opengraph()->addProperty('type', 'articles');
+        SEOTools::twitter()->setSite('@thoplo');
+        SEOTools::jsonLd()->addImage('https://thoplo.com.br/img/logo.jpg');
+
         $termscondition = Info::where('slug', 'terms-condition')->first();
         return view('frontend.pages.termscondition', compact('termscondition'));
 
     }
     public function aboutus()
     {
+        SEOTools::setTitle('About Us - Thoplo Machine');
+        SEOTools::setDescription('About Us of Thopolo Machine PVT LTD');
+        SEOTools::opengraph()->setUrl('http://thoplo.com');
+        SEOTools::setCanonical('https://thoplo.com');
+        SEOTools::opengraph()->addProperty('type', 'articles');
+        SEOTools::twitter()->setSite('@thoplo');
+        SEOTools::jsonLd()->addImage('https://thoplo.com.br/img/logo.jpg');
+
+
         $aboutus = Info::where('slug', 'about-us')->first();
         return view('frontend.pages.aboutus', compact('aboutus'));
     }

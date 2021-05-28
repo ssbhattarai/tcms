@@ -86,11 +86,19 @@
                      <span class="help-text text-danger">{{ errors[0] }}</span>
                 </ValidationProvider>
                 </div>
-
                 <label class="custom-toggle m-3">
-                    <input type="checkbox" checked v-model="service.status">
+
+                    <input type="checkbox" checked v-model="service.status" >
                 <span class="custom-toggle-slider rounded-circle" data-label-off="false" data-label-on="true"></span>
             </label>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" v-model="service.isFeatured" value="featured">
+                <label class="custom-control-label" for="customRadioInline1">Featured</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input" v-model="service.isFeatured" value="notfeatured">
+                <label class="custom-control-label" for="customRadioInline2">Not Featured</label>
+            </div>
 
         <div class="float-right p-4">
                 <button type="submit" class="btn btn-primary btn-sm" :disabled="invalid">Save</button>
@@ -285,7 +293,8 @@ export default {
                 description: '',
                 image: '',
                 status:false,
-                prevImage: ''
+                prevImage: '',
+                isFeatured: ''
 
             },
             demoImage: [],
@@ -414,6 +423,8 @@ export default {
             formData.append("status", this.service.status);
             formData.append("service_intro", this.service.serviceIntro);
             formData.append("prev_image", this.service.prevImage);
+            formData.append("is_featured", this.service.isFeatured);
+
             const config = {
                 "content-type": "multipart/form-data"
             };
@@ -465,10 +476,14 @@ export default {
             window.scrollTo(0, 0);
 
             this.service = item;
+            console.log(item);
             this.service.serviceIntro = item.service_intro;
+            this.service.isFeatured = item.is_featured;
 
             const prev_image = item.image;
-            this.formState = "update";
+            this.formState = "update"
+
+
 
             this.service.prevImage = item.image;
 
@@ -519,6 +534,7 @@ export default {
 
             this.service = item;
             this.service.serviceIntro = item.service_intro;
+            this.service.isFeatured = item.is_featured;
 
             const prev_image = item.image;
             this.demoImage.push("/storage/" + prev_image);

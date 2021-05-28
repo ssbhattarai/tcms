@@ -44,7 +44,7 @@ class ServiceController extends BaseController
     {
          $validation = $request->validate([
             'title' => 'required|string',
-            'service_intro' => 'required|max:100',
+            'service_intro' => 'required|max:150',
             'status' => 'required',
             'description' => 'required|string',
             'image' => 'required',
@@ -62,6 +62,7 @@ class ServiceController extends BaseController
                 'service_intro' => $request->service_intro,
                 'image' => $i,
                 'status' => $request->status == 'false' ? 0 : 1,
+                'is_featured' => $request->is_featured,
                 'description' => $request->description
             ]);
 
@@ -103,7 +104,7 @@ class ServiceController extends BaseController
         // dd($request->all());
         $validation = $request->validate([
             'title' => 'required|string',
-            'service_intro' => 'required|max:100',
+            'service_intro' => 'required|max:150',
             'status' => 'required',
             'description' => 'required|string',
             'image' => 'required',
@@ -129,6 +130,7 @@ class ServiceController extends BaseController
             'service_intro' => $request->service_intro,
             'image' => $i,
             'status' => $request->status == 'false' ? 0 : 1,
+            'is_featured' => $request->is_featured,
             'description' => $request->description
         ]);
 

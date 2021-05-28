@@ -106,7 +106,7 @@ class BlogController extends BaseController
             'title' => 'required|string',
             'category_id' => 'required',
             'featured' => 'required',
-            'blog_introduction' => 'required|string|max:100',
+            'blog_introduction' => 'required|string|max:150',
             'written_by' => 'required|string',
             'description' => 'required|string',
             'prev_image' => 'required|string',
