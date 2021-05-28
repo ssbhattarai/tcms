@@ -42,16 +42,13 @@ class FrontendController extends BaseController
         $map = Asset::take(1)->where('type', 'map')->get();
         $menu_image = Asset::take(1)->where('type', 'menu_image')->first();
         $menu_file = Asset::take(1)->where('type', 'menu_file')->first();
-        $blogs = Blog::take(8)->orderBy('id', 'desc')->get();
+        // $blogs = Blog::take(8)->orderBy('id', 'desc')->get();
 
         $category = Category::take(6)->get();
         $script = Script::all();
 
-        $blog = Blog::orderBy('id', 'desc')->take(4)->get();
+        $blogs = Blog::with('category')->orderBy('id', 'desc')->take(3)->get();
 
-        // $product = Product::all();
-
-        // dd($services->all());
 
         return view('frontend.index', [
             'slider' => $slider,
@@ -59,7 +56,6 @@ class FrontendController extends BaseController
             'blogs' => $blogs,
             'script' => $script,
             'category' => $category,
-            'blog' => $blog,
             'menu_image' => $menu_image,
             'menu_file' => $menu_file,
         ]);
@@ -128,11 +124,12 @@ class FrontendController extends BaseController
         JsonLd::setType('Article');
         // JsonLd::addImage($blog->image->list('url'));
 
-        // $category = Category::take(5)->where('status',1)->get();
+        $category = Category::take(5)->where('status',1)->get();
         return view('frontend.pages.blog.blog-details', [
             'blog' => $blog,
             'related' => $related,
-            'recent' => $recent
+            'recent' => $recent,
+            'category' => $category
         ]);
     }
 
@@ -378,8 +375,35 @@ class FrontendController extends BaseController
         return view('frontend.pages.faqs');
     }
 
+    public function getblogsbycategory($catslug)
+    {
+        SEOTools::setTitle('Blog Details - Thoplo Machines');
+        SEOTools::setDescription('All blogs by Category');
+        SEOTools::opengraph()->setUrl('http://thoplomachine.com');
+        SEOTools::setCanonical('https://thoplomachine.com/blog');
+        SEOTools::opengraph()->addProperty('type', 'articles');
+        SEOTools::twitter()->setSite('@thoplomachine');
+        SEOTools::jsonLd()->addImage('https://codecasts.com.br/img/logo.jpg');
 
 
+        $category = Category::where('slug', $catslug)->first();
+        // dd($category);
+        $blog = Blog::with('category')->orderBy('id', 'desc')->where('category_id', $category->id)->get();
+        return view('frontend.pages.blog.index', compact('blog'));
+    }
 
+
+    public function privacypolicy()
+    {
+        $privacy = Info::where('slug', 'privacy-policy')->first();
+        return view('frontend.pages.privacy', compact('privacy'));
+    }
+
+    public function termscondition()
+    {
+        $termscondition = Info::where('slug', 'terms-condition')->first();
+        return view('frontend.pages.termscondition', compact('termscondition'));
+
+    }
 
 }

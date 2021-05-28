@@ -982,115 +982,48 @@
         </div>
     </div>
 </div>
-{{-- <div class="blog-area pt-80 pb-50">
+<div class="blog-area pt-80 pb-50">
     <div class="container">
         <div class="section-title">
-            <h2>The News from Our Blog</h2>
+            <h2>Our Blog</h2>
             <div class="bar"></div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                labore et dolore magna aliqua.</p>
         </div>
         <div class="row justify-content-center">
-            <div class="col-lg-4 col-md-6">
-                <div class="single-blog-post">
-                    <div class="blog-image">
-                        <a href="/blog-details/"><img src="images/blog1.jpg" alt="image"></a>
-                        <div class="date">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                                <line x1="16" y1="2" x2="16" y2="6" />
-                                <line x1="8" y1="2" x2="8" y2="6" />
-                                <line x1="3" y1="10" x2="21" y2="10" />
-                            </svg>
-                            March 15, 2021
+            @if (count($blogs) > 0)
+                @foreach ($blogs as $item)
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-blog-post">
+                        <div class="blog-image">
+                            <a href="{{ route('blog.view', $item->slug) }}"><img src="{{ URL::asset('storage/') }}/{{ $item->image }}" alt="image"></a>
+                            <div class="date">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                <line x1="16" y1="2" x2="16" y2="6"/>
+                                <line x1="8" y1="2" x2="8" y2="6"/>
+                                <line x1="3" y1="10" x2="21" y2="10"/>
+                                </svg>
+                                {{ \Carbon\Carbon::parse($item->created_at )->toFormattedDateString() }}
+                            </div>
+                        </div>
+                        <div class="blog-post-content">
+                            <h3><a href="{{ route('blog.view', $item->slug) }}">{{ $item->title }}</a></h3>
+                            {{-- <span>By {{ $item->written_by }}</span> --}}
+                            <p>{{ $item->blog_introduction }}</p>
+                            <a class="read-more-btn" href="{{ route('blog.view', $item->slug) }}">
+                                Read More
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                                <polyline points="12 5 19 12 12 19"/>
+                                </svg>
+                            </a>
                         </div>
                     </div>
-                    <div class="blog-post-content">
-                        <h3><a href="/blog-details/">The Security Risks of Changing Package Owners</a></h3>
-                        <span>By <a href="#">Admin</a></span>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse.</p>
-                        <a class="read-more-btn" href="/blog-details/">
-                            Read More
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <line x1="5" y1="12" x2="19" y2="12" />
-                                <polyline points="12 5 19 12 12 19" />
-                            </svg>
-                        </a>
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single-blog-post">
-                    <div class="blog-image">
-                        <a href="/blog-details/"><img src="images/blog2.jpg" alt="image"></a>
-                        <div class="date">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                                <line x1="16" y1="2" x2="16" y2="6" />
-                                <line x1="8" y1="2" x2="8" y2="6" />
-                                <line x1="3" y1="10" x2="21" y2="10" />
-                            </svg>
-                            March 17, 2021
-                        </div>
-                    </div>
-                    <div class="blog-post-content">
-                        <h3><a href="/blog-details/">Tips to Protecting Your Business and Family</a></h3>
-                        <span>By <a href="/iot/#">Smith</a></span>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse.</p>
-                        <a class="read-more-btn" href="/blog-details/">
-                            Read More
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <line x1="5" y1="12" x2="19" y2="12" />
-                                <polyline points="12 5 19 12 12 19" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single-blog-post">
-                    <div class="blog-image">
-                        <a href="/blog-details/"><img src="images/blog3.jpg" alt="image"></a>
-                        <div class="date">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                                <line x1="16" y1="2" x2="16" y2="6" />
-                                <line x1="8" y1="2" x2="8" y2="6" />
-                                <line x1="3" y1="10" x2="21" y2="10" />
-                            </svg>
-                            March 19, 2021
-                        </div>
-                    </div>
-                    <div class="blog-post-content">
-                        <h3><a href="/blog-details/">Protect Your Workplace from Cyber Attacks</a></h3>
-                        <span>By <a href="/iot/#">John</a></span>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse.</p>
-                        <a class="read-more-btn" href="/blog-details/">
-                            Read More
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <line x1="5" y1="12" x2="19" y2="12" />
-                                <polyline points="12 5 19 12 12 19" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
+                @endforeach
+            @else
+                no Data
+            @endif
         </div>
     </div>
-</div> --}}
+</div>
 @endsection

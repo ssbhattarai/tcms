@@ -31,6 +31,7 @@ Route::get('/blog', [App\Http\Controllers\Frontend\FrontendController::class, 'B
 Route::get('/blog/{slug}', [])->name('blog.view');
 Route::post('/get-blog-category', [App\Http\Controllers\Frontend\FrontendController::class, 'getBlogByCategory']);
 Route::get('/blog/{slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'BlogDetail'])->name('blog.view');
+Route::get('/blogs/{category}', [App\Http\Controllers\Frontend\FrontendController::class, 'getblogsbycategory']);
 
 
 
@@ -41,11 +42,6 @@ Route::post('/get-blog-category', [App\Http\Controllers\Frontend\FrontendControl
 Route::get('/menu', [App\Http\Controllers\Frontend\FrontendController::class, 'Menu']);
 Route::get('/menu/{cat_name}', [App\Http\Controllers\Frontend\FrontendController::class, 'MenuCategoryView']);
 
-// cart
-// Route::get('/cart', [App\Http\Controllers\Frontend\Product\CartController::class, 'viewCart']);
-// Route::get('/cart/get-all', [App\Http\Controllers\Frontend\Product\CartController::class, 'getAllCartItems']);
-// Route::get('/cart/add/{product_id}', [App\Http\Controllers\Frontend\Product\CartController::class, 'addToCart']);
-// Route::get('/cart/delete/{product_id}', [App\Http\Controllers\Frontend\Product\CartController::class, 'deleteItem']);
 Auth::routes();
 
 //our team
@@ -58,6 +54,6 @@ Route::get('/service/{slug}', [App\Http\Controllers\Frontend\FrontendController:
 
 //faqs
 Route::get('/faqs', [App\Http\Controllers\Frontend\FrontendController::class, 'faqs']);
+Route::get('/privacy-policy', [App\Http\Controllers\Frontend\FrontendController::class, 'privacypolicy']);
+Route::get('/term-condition', [App\Http\Controllers\Frontend\FrontendController::class, 'termscondition']);
 
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

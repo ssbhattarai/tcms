@@ -15,10 +15,15 @@
 
         <!--add form -->
         <div class="add-blog mb-5 shadow p-3 " v-if="showAddForm">
-            <div class="form-group">
-                <label>Page Name</label>
-                <input class="form-control" type="text" v-model="form.name" />
-            </div>
+
+             <div class="form-group">
+    <label for="name">Page Name</label>
+    <select class="form-control" id="name" v-model="form.name">
+      <option value="privacy policy">Privacy Policy</option>
+      <option value="terms condition">Terms &amp; Condition</option>
+      <option value="about us">About Us</option>
+    </select>
+  </div>
 
             <div class="form-group">
                 <label>Description</label>

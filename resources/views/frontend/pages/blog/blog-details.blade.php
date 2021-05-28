@@ -148,7 +148,7 @@
           </div>
           <div class="col-lg-4 col-md-12">
              <div class="widget-area" id="secondary">
-                <div class="widget widget_search">
+                {{-- <div class="widget widget_search">
                    <form class="search-form">
                       <label><input type="search" class="search-field" placeholder="Search..."></label>
                       <button type="submit">
@@ -158,7 +158,7 @@
                          </svg>
                       </button>
                    </form>
-                </div>
+                </div> --}}
                 <div class="widget widget_startp_posts_thumb">
                    <h3 class="widget-title">Read More</h3>
                    @foreach ($recent as $r)
@@ -176,11 +176,10 @@
                 <div class="widget widget_categories">
                    <h3 class="widget-title">Categories</h3>
                    <ul>
-                      <li><a href="#">Business</a></li>
-                      <li><a href="#">Privacy</a></li>
-                      <li><a href="#">Technology</a></li>
-                      <li><a href="#">Tips</a></li>
-                      <li><a href="#">Uncategorized</a></li>
+                       @foreach ($category as $cat)
+
+                       <li><a href="{{ url('/blogs/') }}/{{ $cat->slug }}">{{ $cat->name }}</a></li>
+                       @endforeach
                    </ul>
                 </div>
                 {{-- <div class="widget widget_tag_cloud">
