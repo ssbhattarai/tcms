@@ -22,10 +22,8 @@
     <div class="container">
        <div class="row align-items-center">
           <div class="col-lg-6 services-details">
-             <div class="services-details-desc">
                 <h3>{{ $service->title }}</h3>
                 {!! $service->description !!}
-             </div>
           </div>
        </div>
        <div class="separate"></div>
