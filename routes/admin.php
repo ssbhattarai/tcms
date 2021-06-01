@@ -62,12 +62,15 @@ Route::group(['middleware' => ['auth']], function () {
         Route::post('/category/update', [App\Http\Controllers\Backend\Service\CategoryController::class, 'updateCategory']);
         Route::get('/categories', [App\Http\Controllers\Backend\Service\CategoryController::class, 'getallcategories']);
 
-        //services
+        //services-------------------------------------------------------------------------------
 
         Route::resource('services', App\Http\Controllers\Backend\Settings\ServiceController::class)->only(['index', 'store',  'destroy']);
         Route::post('/get-all-services', [App\Http\Controllers\Backend\Settings\ServiceController::class, 'getAllServices']);
         Route::post('/service/update', [App\Http\Controllers\Backend\Settings\ServiceController::class, 'updateService']);
 
-
+        // faqs-----------------------------------------------------------------------------------------
+        Route::resource('faqs', App\Http\Controllers\Backend\Settings\FaqsController::class)->only(['index', 'store',  'destroy']);
+        Route::post('/get-all-faqs', [App\Http\Controllers\Backend\Settings\FaqsController::class, 'getAllFaqs']);
+        Route::post('/faqs/update', [App\Http\Controllers\Backend\Settings\FaqsController::class, 'updateFaqs']);
     });
 });

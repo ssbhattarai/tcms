@@ -26,6 +26,10 @@ Vue.component("users", require("./backend/users/users").default);
 //services
 Vue.component('service-component', require('./backend/settings/service/Service').default);
 
+//faqs
+
+Vue.component('faqs-component', require('./backend/Faqs.vue').default);
+
 
 // global components
 import { BootstrapVue } from "bootstrap-vue";

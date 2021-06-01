@@ -7,6 +7,7 @@ use App\Models\Asset;
 use App\Models\Blog;
 use App\Models\Category;
 use App\Models\Contact;
+use App\Models\Faqs;
 use App\Models\Info;
 use App\Models\Product;
 use App\Models\Reservation;
@@ -66,10 +67,7 @@ class FrontendController extends BaseController
 
     public function reservation()
     {
-        return view('frontend_pages.services.reservation', [
-
-        ]);
-
+        return view('frontend_pages.services.reservation', []);
     }
 
     public function Menu()
@@ -79,7 +77,6 @@ class FrontendController extends BaseController
         return view('frontend_pages.menu.menu', [
             'category' => $category,
         ]);
-
     }
 
     public function MenuCategoryView($slug)
@@ -91,7 +88,6 @@ class FrontendController extends BaseController
             'cat_id' => $cat_id->id,
             'category' => $category,
         ]);
-
     }
 
     // blog details page --------------------------------
@@ -127,7 +123,7 @@ class FrontendController extends BaseController
 
         // JsonLd::addImage($blog->image->list('url'));
 
-        $category = Category::take(5)->where('status',1)->get();
+        $category = Category::take(5)->where('status', 1)->get();
         return view('frontend.pages.blog.blog-details', [
             'blog' => $blog,
             'related' => $related,
@@ -184,13 +180,12 @@ class FrontendController extends BaseController
 
     public function about()
     {
-        return view('frontend_pages.about', [
-
-        ]);
+        return view('frontend_pages.about', []);
     }
 
     // our team
-    public function ourteam() {
+    public function ourteam()
+    {
 
         SEOTools::setTitle('Our Team - Thoplo machine');
         SEOTools::setDescription('Our Team');
@@ -207,7 +202,8 @@ class FrontendController extends BaseController
 
     //portfolio
 
-    public function services() {
+    public function services()
+    {
 
         SEOTools::setTitle('Services - Thoplo machine');
         SEOTools::setDescription('Our Services');
@@ -272,7 +268,6 @@ class FrontendController extends BaseController
         } else {
             return redirect('/');
         }
-
     }
 
     // get logged in user details
@@ -311,11 +306,9 @@ class FrontendController extends BaseController
         $store->save();
         if ($store) {
             return json_encode($this->reportSuccess('Seat Booked Successfully. We will contact you soon. Thank you.'));
-
         } else {
             return json_encode($this->reportError('Failed to Book Seat. Please try again'));
         }
-
     }
 
     // contact page
@@ -359,7 +352,6 @@ class FrontendController extends BaseController
 
         if ($store) {
             return back()->with(['success' => 'Thank you for contacting us. we will get back to you soon.']);
-
         } else {
             return back()->with(['error' => 'Something went wrong. Try again.']);
         }
@@ -375,7 +367,8 @@ class FrontendController extends BaseController
         SEOTools::twitter()->setSite('@thoplo');
         SEOTools::jsonLd()->addImage('http://thoplomachine.com/');
 
-        return view('frontend.pages.faqs');
+        $faqs = Faqs::where('status', 1)->orderBy('id', 'desc')->get();
+        return view('frontend.pages.faqs', compact('faqs'));
     }
 
     public function getblogsbycategory($catslug)
@@ -422,7 +415,6 @@ class FrontendController extends BaseController
 
         $termscondition = Info::where('slug', 'terms-condition')->first();
         return view('frontend.pages.termscondition', compact('termscondition'));
-
     }
     public function aboutus()
     {
@@ -438,5 +430,4 @@ class FrontendController extends BaseController
         $aboutus = Info::where('slug', 'about-us')->first();
         return view('frontend.pages.aboutus', compact('aboutus'));
     }
-
 }

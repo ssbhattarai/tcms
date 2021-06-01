@@ -46,23 +46,18 @@
                 </a>
               </li>
 
-            {{-- <li class="nav-item">
-              <a class="nav-link" href="{{url('/admin/users')}}">
-                <i class="ni ni-single-02 text-yellow"></i>
-                <span class="nav-link-text">Users</span>
-              </a>
-            </li> --}}
+
 
             {{-- site settings --}}
-            <li class="nav-item dropdown">
+            {{-- <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                 <i class="ni ni-user-run"></i> Management
               </a>
-              <div class="dropdown-menu">
+              <div class="dropdown-menu"> --}}
                 {{-- <a class="dropdown-item" href="{{url('/admin/api-management')}}">Api Management</a> --}}
-                <a class="dropdown-item" href="{{url('/admin/contact')}}">Contact Us</a>
+                {{-- <a class="dropdown-item" href="{{url('/admin/contact')}}">Contact Us</a>
               </div>
-            </li>
+            </li> --}}
 
             {{-- site settings --}}
             <li class="nav-item dropdown">
@@ -75,12 +70,20 @@
               </div>
             </li>
 
-            {{-- <li class="nav-item">
-              <a class="nav-link" href=" {{url('/admin/reservations')}} ">
-                <i class="ni ni-pin-3 text-primary"></i>
-                <span class="nav-link-text">Reservations</span>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('/admin/faqs')}}">
+                  <i class="fas fa-question"></i>
+
+                  <span class="nav-link-text">Faqs</span>
+                </a>
+              </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href=" {{url('/admin/contact')}} ">
+                <i class="far fa-address-card"></i>
+                <span class="nav-link-text">Contacts</span>
               </a>
-            </li> --}}
+            </li>
 
             {{-- <li class="nav-item">
               <a class="nav-link" href=" {{url('/admin/orders')}} ">

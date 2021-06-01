@@ -48,8 +48,8 @@ a:hover {
   right: 10px;
   width: 30%;
   z-index: 9;
-  background: #2dadba;
-  background: linear-gradient(263deg, #2dadba 0%, #fbb03b 79%);
+  background: #ba2d44;
+  background: linear-gradient(263deg, #ba2d44 0%, #fbb03b 79%);
   color: white;
   box-shadow: 0px 0px 20px black;
   border-radius: 10px;
@@ -69,7 +69,7 @@ a:hover {
 }
 
 .top-notice {
-  background-color: #2dadba;
+  background-color: #ba2d44;
   color: white;
   text-align: center;
   height: 30px;
@@ -118,7 +118,7 @@ a:hover {
 }
 
 .navbar .nav-menu i {
-  color: #2dadba !important;
+  color: #ba2d44 !important;
   font-size: 20px !important;
 }
 
@@ -165,7 +165,7 @@ a:hover {
 }
 
 .navbar .nav-list .nav-list-item .nav-links li a {
-  color: #2dadba;
+  color: #ba2d44;
   text-transform: uppercase;
   font-size: 13px;
   font-weight: bold;
@@ -191,7 +191,7 @@ a:hover {
 }
 
 .navbar .nav-list .nav-list-item .nav-signup-login .nav-cart .cart-icon i {
-  color: #2dadba;
+  color: #ba2d44;
 }
 
 .navbar .nav-list .nav-list-item .nav-signup-login .nav-cart .cart-icon span {
@@ -204,7 +204,7 @@ a:hover {
   right: -15px;
   position: absolute;
   font-size: 10px;
-  background-color: #2dadba;
+  background-color: #ba2d44;
   color: white;
 }
 
@@ -235,7 +235,7 @@ a:hover {
   flex-direction: row;
   justify-content: space-between;
   padding: 10px;
-  background-color: #2dadba;
+  background-color: #ba2d44;
   margin-bottom: 0px;
 }
 
@@ -324,7 +324,7 @@ a:hover {
 
 .navbar .nav-list .nav-list-item .nav-signup-login a {
   margin-top: -5px;
-  color: #2dadba;
+  color: #ba2d44;
   cursor: pointer;
   font-size: 13px;
   font-weight: bold;
@@ -333,7 +333,7 @@ a:hover {
 }
 
 .navbar .nav-list .nav-list-item .nav-signup-login a i {
-  color: #2dadba;
+  color: #ba2d44;
 }
 
 .navbar .nav-list .nav-list-item .nav-signup-login .logged-in-items {
@@ -365,8 +365,8 @@ a:hover {
 .navbar .nav-list .nav-list-item .nav-signup-login .logged-in-items .fa-dashboard i {
   padding: 8px 9px;
   border-radius: 50%;
-  border: 2px solid #2dadba;
-  color: #2dadba;
+  border: 2px solid #ba2d44;
+  color: #ba2d44;
   font-size: 12px;
 }
 
@@ -384,14 +384,14 @@ a:hover {
 }
 
 .navbar .nav-list .nav-list-item .nav-signup-login .logged-in-items .loggedin-list li:first-child {
-  background-color: #2dadba;
+  background-color: #ba2d44;
   color: white !important;
   padding: 5px;
   padding-left: 10px;
 }
 
 .navbar .nav-list .nav-list-item .nav-signup-login .logged-in-items .loggedin-list li:first-child:hover {
-  background-color: #2dadba;
+  background-color: #ba2d44;
 }
 
 .navbar .nav-list .nav-list-item .nav-signup-login .logged-in-items .loggedin-list li:first-child a {
@@ -400,7 +400,7 @@ a:hover {
 
 .navbar .nav-list .nav-list-item .nav-signup-login .logged-in-items .loggedin-list li {
   padding-left: 10px;
-  color: #2dadba;
+  color: #ba2d44;
   font-size: 13px;
   font-weight: bolder;
   text-transform: capitalize;
@@ -418,13 +418,13 @@ a:hover {
   margin-top: 5px;
   display: block;
   width: 100%;
-  color: #2dadba;
+  color: #ba2d44;
   font-size: 13px;
   font-weight: lighter;
 }
 
 .navbar .nav-list .nav-list-item .nav-signup-login .logged-in-items .loggedin-list li a i {
-  color: #2dadba;
+  color: #ba2d44;
 }
 
 @media screen and (max-width: 1000px) {
@@ -479,7 +479,7 @@ a:hover {
 
   .navbar .nav-list .nav-list-item .nav-links li a {
     font-weight: bold;
-    color: #2dadba;
+    color: #ba2d44;
     text-align: center;
   }
 
@@ -641,7 +641,7 @@ footer .footer .footer-services .f-social-icons {
 }
 
 footer .footer .footer-services .f-social-icons li a i {
-  color: #2dadba;
+  color: #ba2d44;
   background-color: white;
   border-radius: 50%;
   padding: 7px 8px;
@@ -739,8 +739,8 @@ footer .footer-copyright p {
 }
 
 .services-swiper .swiper-wrapper .swiper-slide .swiper-content .swiper-button button:hover {
-  background: #2dadba;
-  background: linear-gradient(263deg, #2dadba 0%, #fbb03b 79%);
+  background: #ba2d44;
+  background: linear-gradient(263deg, #ba2d44 0%, #fbb03b 79%);
   color: white;
 }
 
@@ -804,7 +804,7 @@ footer .footer-copyright p {
 .login .login-form .social-link .row .google {
   margin-top: 10px;
   text-align: center;
-  background-color: #2dadba;
+  background-color: #ba2d44;
   padding: 10px;
   color: white;
 }
@@ -825,7 +825,7 @@ footer .footer-copyright p {
   right: 20px;
   box-shadow: 0px 0px 20px 3px #fbb03b;
   z-index: 99;
-  background-color: #2dadba;
+  background-color: #ba2d44;
   letter-spacing: 2px;
   -webkit-animation: fade 1s ease;
           animation: fade 1s ease;
@@ -1037,7 +1037,7 @@ footer .footer-copyright p {
 }
 
 .menu .menu-nav .menu-list .swiper-wrapper .swiper-slide .swiper-cat-color {
-  background-color: #2dadba;
+  background-color: #ba2d44;
   color: white;
 }
 
@@ -1046,7 +1046,7 @@ footer .footer-copyright p {
   border-radius: 30px;
   display: block;
   padding: 10px;
-  border: 1px solid #2dadba;
+  border: 1px solid #ba2d44;
 }
 
 .menu .show-more {
@@ -1117,7 +1117,7 @@ footer .footer-copyright p {
 
 .menu .menu-list .menu-list-wrapper .menu-item .menu-item-content .menu-text .menu-title span {
   font-size: 14px;
-  color: #2dadba;
+  color: #ba2d44;
   font-weight: bold;
 }
 
@@ -1173,14 +1173,14 @@ footer .footer-copyright p {
 .button {
   display: inline-block;
   padding: 10px;
-  color: #2dadba;
+  color: #ba2d44;
   text-transform: uppercase;
   font-size: 1rem;
   letter-spacing: 0.15rem;
   transition: all 0.3s;
   position: relative;
   overflow: hidden;
-  border: 2px solid #2dadba;
+  border: 2px solid #ba2d44;
   font-weight: bold;
   z-index: 1;
 }
@@ -1203,7 +1203,7 @@ footer .footer-copyright p {
   left: 0;
   width: 0%;
   height: 100%;
-  background-color: #2dadba;
+  background-color: #ba2d44;
   transition: all 0.3s;
   z-index: -1;
 }
@@ -1261,7 +1261,7 @@ footer .footer-copyright p {
 }
 
 .cart .cart-list .cart-items .cart-price span {
-  color: #2dadba;
+  color: #ba2d44;
 }
 
 .cart .cart-list .cart-items .cart-delete button {
@@ -1281,7 +1281,7 @@ footer .footer-copyright p {
 }
 
 .cart .order-summary .summary-wrapper {
-  background-color: #2dadba;
+  background-color: #ba2d44;
 }
 
 .cart .order-summary .summary-wrapper table {
@@ -1312,7 +1312,7 @@ footer .footer-copyright p {
 }
 
 .checkout .order-summary .summary-wrapper {
-  background-color: #2dadba;
+  background-color: #ba2d44;
 }
 
 .checkout .order-summary .summary-wrapper .summary-title {

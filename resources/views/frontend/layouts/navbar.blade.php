@@ -39,7 +39,6 @@
                             </a>
 
                         </li>
-
                         <li class="nav-item"><a class="nav-link {{ Route::current()->uri == 'contact' ? 'active' : '' }}" href="/contact/">Contact</a></li>
                     </ul>
                 </div>

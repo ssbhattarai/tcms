@@ -125,4 +125,7 @@ return [
      * loaded chunk amount "pagination"
      */
     'pagination_amount' => 50,
+
+
+    'base_url' => env('APP_URL')
 ];

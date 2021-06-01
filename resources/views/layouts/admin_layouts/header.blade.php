@@ -31,7 +31,6 @@
         }
     </style>
 
-@FilemanagerScript
 </head>
 <body>
 

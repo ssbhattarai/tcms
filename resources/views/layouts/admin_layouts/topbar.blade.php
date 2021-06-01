@@ -45,7 +45,7 @@
                   <a class="dropdown-item" href="{{ route('logout') }}"
                   onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
-                 <span>Logout</span> &nbsp;<i class="fas fa-sign-out-alt"></i>
+                 <span class="text-danger">Logout</span> &nbsp;<i class="fas fa-sign-out-alt text-danger"></i>
               </a>
 
               <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -71,7 +71,7 @@
                   <a class="dropdown-item" href="{{ route('logout') }}"
                       onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
-                     <i class="ni ni-user-run"></i> <span>Logout</span>
+                     <i class="ni ni-user-run text-danger"></i> <span>Logout</span>
                   </a>
 
                   <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
