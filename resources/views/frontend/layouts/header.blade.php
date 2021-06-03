@@ -9,6 +9,7 @@
     {!! SEO::generate() !!}
 
     <link rel="stylesheet" href="{{ asset('frontend/css/styles.css') }}" data-n-g>
+    <script src="{{ mix('js/admin.js') }}"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <noscript data-n-css></noscript>
 
@@ -19,6 +20,8 @@
     width: 5rem;
         }
     </style>
+    @yield('styles');
+    <script src="https://kit.fontawesome.com/f8d2c9a9e8.js" crossorigin="anonymous"></script>
 </head>
 
 <body lang="en">

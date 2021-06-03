@@ -1,6 +1,6 @@
 <template>
     <div>
-        <a href="/">
+        <a href="/admin">
             <img
                 id="nav-logo"
                 class="col-10"

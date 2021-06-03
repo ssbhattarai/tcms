@@ -70,6 +70,21 @@
               </div>
             </li>
 
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('/admin/portfolios')}}">
+                    <i class="fas fa-trophy text-success"></i>
+
+                  <span class="nav-link-text">Portfolio</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href=" {{url('/admin/contact')}} ">
+                  <i class="far fa-address-card"></i>
+                  <span class="nav-link-text">Contacts</span>
+                </a>
+              </li>
+
             <li class="nav-item">
                 <a class="nav-link" href="{{url('/admin/faqs')}}">
                   <i class="fas fa-question"></i>
@@ -78,12 +93,7 @@
                 </a>
               </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href=" {{url('/admin/contact')}} ">
-                <i class="far fa-address-card"></i>
-                <span class="nav-link-text">Contacts</span>
-              </a>
-            </li>
+
 
             {{-- <li class="nav-item">
               <a class="nav-link" href=" {{url('/admin/orders')}} ">

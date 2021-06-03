@@ -27,8 +27,12 @@ Vue.component("users", require("./backend/users/users").default);
 Vue.component('service-component', require('./backend/settings/service/Service').default);
 
 //faqs
-
 Vue.component('faqs-component', require('./backend/Faqs.vue').default);
+
+//portfolio
+Vue.component('portfolio-component', require('./backend/Portfolio.vue').default);
+
+
 
 
 // global components
@@ -39,8 +43,6 @@ Vue.component("pagination", require("laravel-vue-pagination"));
 Vue.use(BootstrapVue);
 Vue.use(FlashMessage);
 Vue.use(require("vue-moment"));
-
-require('../assets/vendor/MediaManager/js/manager')
 
 
 
@@ -78,8 +80,9 @@ Vue.use(Toaster, {timeout: 5000})
 import VueConfirmDialog from 'vue-confirm-dialog'
 
 Vue.use(VueConfirmDialog)
-require('../assets/vendor/MediaManager/js/manager')
+var VueScrollTo = require('vue-scrollto');
 
+Vue.use(VueScrollTo)
 
 const app = new Vue({
     el: "#app"

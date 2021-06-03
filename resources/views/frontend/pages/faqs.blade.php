@@ -25,13 +25,24 @@
             @if(count($faqs) > 0)
                 @foreach ($faqs as $key=>$item)
                     <div class="card">
-                    <div class="card-header" id="headingOne">
-                        <button class="btn" type="button" data-toggle="collapse" data-target="#collapse{{ $item->id }}" aria-expanded="true" aria-controls="collapse{{ $item->id }}">
-                            {{ $item->question }}
-                        </button>
+                    <div class="card-header cursor" id="heading{{ $item->id }}" data-toggle="collapse" data-target="#collapse{{ $item->id }}" aria-expanded="true" aria-controls="collapse{{ $item->id }}">
+                        <div class="row">
+                            <div class="col-11">
+                                {{ $item->question }}
+                            </div>
+                            <div class="col-1">
+                                {{-- @if($item->id)
+                                <i class="fas fa-chevron-down"></i>
+                                @else
+
+                                <i class="fas fa-chevron-right"></i>
+                                @endif --}}
+                            </div>
+                        </div>
+                        <b>   </b>
                     </div>
 
-                    <div id="collapse{{ $item->id }}" class="collapse {{ $key == 0 ? 'show' : ''}}" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div id="collapse{{ $item->id }}" class="collapse {{ $key == 0 ? 'show' : ''}}" aria-labelledby="heading{{ $item->id }}" data-parent="#accordionExample">
                         <div class="card-body">
                            {!! $item->description !!}
                         </div>
@@ -137,6 +148,12 @@
        </div>
     </div>
  </div>
-
+@section('styles')
+<style>
+    .cursor {
+        cursor: pointer;
+    }
+</style>
+@endsection
 
 @endsection

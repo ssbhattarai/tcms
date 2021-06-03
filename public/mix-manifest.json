@@ -1,8 +1,6 @@
 {
     "/js/admin.js": "/js/admin.js",
     "/js/frontend.js": "/js/frontend.js",
-    "/workers/db.js": "/workers/db.js",
-    "/workers/audio.js": "/workers/audio.js",
     "/css/cart.css": "/css/cart.css",
     "/css/blog-detail.css": "/css/blog-detail.css",
     "/css/reservation.css": "/css/reservation.css",
