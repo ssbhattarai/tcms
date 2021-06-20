@@ -27,10 +27,10 @@ Vue.component("users", require("./backend/users/users").default);
 Vue.component('service-component', require('./backend/settings/service/Service').default);
 
 //faqs
-Vue.component('faqs-component', require('./backend/Faqs.vue').default);
+Vue.component('faqs-component', require('./backend/Faqs').default);
 
 //portfolio
-Vue.component('portfolio-component', require('./backend/portfolio/Portfolio.vue').default);
+Vue.component('portfolio-component', require('./backend/portfolio/Portfolio').default);
 
 
 
