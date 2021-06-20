@@ -22,9 +22,10 @@ class CreatePortfolioTable extends Migration
 
             $table->string('used_technology');
 
-            $table->unsignedBigInteger('category_id');
+            $table->string('category');
 
-            $table->foreign('category_id')->references('id')->on('portfolio_category');
+            $table->boolean('status')->default(false);
+
 
             $table->softDeletes();
             $table->timestamps();

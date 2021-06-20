@@ -29,10 +29,9 @@ class PortfolioController extends BaseController
             $searchBy = $request->search_by;
             $service = Portfolio::where('company_name', 'like', '%' . $key . '%')
                 ->whereOr('description', 'like', '%' . $key . '%')
-                ->with('category')
                 ->orderBy('id', 'desc')->paginate(10);
         } else {
-            $service = Portfolio::with('category')->orderBy('id', 'desc')->paginate(10);
+            $service = Portfolio::orderBy('id', 'desc')->paginate(10);
         }
 
         return json_encode($this->reportSuccess('Data retrived successfully', $service));
@@ -47,9 +46,11 @@ class PortfolioController extends BaseController
             'status' => 'required',
             'description' => 'required|string',
             'image' => 'required',
-            'category_id' => 'required',
-            'site_url' => 'required'
+            'category' => 'required',
+            'site_url' => 'required',
+            'title' => 'required'
         ]);
+        // dd($request->category);
 
         if ($request->hasfile('image')) {
 
@@ -61,8 +62,9 @@ class PortfolioController extends BaseController
                 'site_url' => $request->site_url,
                 'image' => $i,
                 'status' => $request->status == 'false' ? 0 : 1,
-                'category_id' => $request->category_id,
-                'description' => $request->description
+                'category' => $request->category,
+                'description' => $request->description,
+                'title' => $request->title
             ]);
 
             if ($portfolio) {
@@ -97,9 +99,14 @@ class PortfolioController extends BaseController
             'status' => 'required',
             'description' => 'required|string',
             'image' => 'required',
-            'category_id' => 'required',
-            'site_url' => 'required'
+            'category' => 'required',
+            'site_url' => 'required',
+            'title' => 'required'
+
         ]);
+
+        // dd($request->category);
+
 
         $id = $request->id;
 
@@ -119,8 +126,9 @@ class PortfolioController extends BaseController
             'site_url' => $request->site_url,
             'image' => $i,
             'status' => $request->status == 'false' ? 0 : 1,
-            'category_id' => $request->category_id,
-            'description' => $request->description
+            'category' => $request->category,
+            'description' => $request->description,
+            'title' => $request->title
         ]);
 
         if ($store) {

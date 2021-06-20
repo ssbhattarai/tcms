@@ -9,6 +9,8 @@ use App\Models\Category;
 use App\Models\Contact;
 use App\Models\Faqs;
 use App\Models\Info;
+use App\Models\Portfolio;
+use App\Models\PortfolioCategory;
 use App\Models\Product;
 use App\Models\Reservation;
 use App\Models\Script;
@@ -429,5 +431,21 @@ class FrontendController extends BaseController
 
         $aboutus = Info::where('slug', 'about-us')->first();
         return view('frontend.pages.aboutus', compact('aboutus'));
+    }
+
+    public function ourportfolio()
+    {
+        SEOTools::setTitle('Our Portfolio- Thoplo Machine');
+        SEOTools::setDescription('Clients of Thopolo Machine PVT LTD');
+        SEOTools::opengraph()->setUrl('http://thoplomachine.com/');
+        SEOTools::setCanonical('http://thoplomachine.com/portfolio');
+        SEOTools::opengraph()->addProperty('type', 'articles');
+        SEOTools::twitter()->setSite('@thoplo');
+        SEOTools::jsonLd()->addImage('https://thoplo.com.br/img/logo.jpg');
+
+        $portfolio = Portfolio::where('status', 1)->first();
+        $portcategory = PortfolioCategory::where('status', 1)->select('id', 'title')->get();
+
+        return view('frontend.pages.portfolio', compact('portfolio', 'portcategory'));
     }
 }

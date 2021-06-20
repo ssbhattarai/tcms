@@ -12,7 +12,7 @@ class Portfolio extends Model
     use HasFactory, SoftDeletes;
     protected $table = 'portfolio';
 
-    protected $fillable = ['company_name', 'description', 'image', 'site_url', 'used_technology', 'category_id'];
+    protected $fillable = ['company_name', 'title', 'description', 'image', 'site_url', 'used_technology', 'category', 'status'];
 
 
     public function category()
