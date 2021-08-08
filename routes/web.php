@@ -10,24 +10,24 @@ Auth::routes([
     // 'verify' => false, // Email Verification Routes...
 ]);
 
+Route::get('/', function () {
+    return view('frontend.index');
+});
+
 // logo
 Route::get('/get-logo', [App\Http\Controllers\Backend\Settings\HomepageController::class, 'getLogo']);
+
 // contact page
-Route::get('/contact', [App\Http\Controllers\Frontend\FrontendController::class, 'contact']);
+Route::get('/contact-us', [App\Http\Controllers\Frontend\FrontendController::class, 'contact']);
 Route::get('/about', [App\Http\Controllers\Frontend\FrontendController::class, 'about']);
 Route::post('/save-contact', [App\Http\Controllers\Frontend\FrontendController::class, 'saveContact']);
 
 // info pages like(about us - terms and condition)
 Route::get('/infos/{slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'infos']);
 
-//  frontend controllers
-Route::get('/', [App\Http\Controllers\Frontend\FrontendController::class, 'home']);
-Route::get('/reservation', [App\Http\Controllers\Frontend\FrontendController::class, 'reservation']);
-Route::get('/get-logged-user', [App\Http\Controllers\Frontend\FrontendController::class, 'getLoggedUser']);
-Route::post('/reservation/save', [App\Http\Controllers\Frontend\FrontendController::class, 'saveReservation']);
 
 // blogs
-Route::get('/blog', [App\Http\Controllers\Frontend\FrontendController::class, 'Blog']);
+Route::get('/blogs', [App\Http\Controllers\Frontend\FrontendController::class, 'Blog']);
 Route::get('/blog/{slug}', [])->name('blog.view');
 Route::post('/get-blog-category', [App\Http\Controllers\Frontend\FrontendController::class, 'getBlogByCategory']);
 Route::get('/blog/{slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'BlogDetail'])->name('blog.view');
@@ -55,3 +55,7 @@ Route::get('/faqs', [App\Http\Controllers\Frontend\FrontendController::class, 'f
 Route::get('/privacy-policy', [App\Http\Controllers\Frontend\FrontendController::class, 'privacypolicy']);
 Route::get('/term-condition', [App\Http\Controllers\Frontend\FrontendController::class, 'termscondition']);
 Route::get('/about-us', [App\Http\Controllers\Frontend\FrontendController::class, 'aboutus']);
+
+
+
+Route::get('social-share', [SocialShareController::class, 'index']);

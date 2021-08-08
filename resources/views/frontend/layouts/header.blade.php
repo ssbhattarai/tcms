@@ -2,27 +2,36 @@
 <html lang="en">
 
 <head>
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    <meta charSet="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    {!! SEO::generate() !!}
+  <title>Lotus Bootstrap Template - Index</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
-    <link rel="stylesheet" href="{{ asset('frontend/css/styles.css') }}" data-n-g>
-    <script src="{{ mix('js/admin.js') }}"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <noscript data-n-css></noscript>
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-    <style>
-        .image-logo {
-            object-fit: cover;
-    height: auto;
-    width: 5rem;
-        }
-    </style>
-    @yield('styles');
-    <script src="https://kit.fontawesome.com/f8d2c9a9e8.js" crossorigin="anonymous"></script>
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{ asset("assets/frontend/vendor/aos/aos.css") }}" rel="stylesheet">
+  <link href="{{ asset("assets/frontend/vendor/bootstrap/css/bootstrap.min.css") }}" rel="stylesheet">
+  <link href="{{ asset("assets/frontend/vendor/bootstrap-icons/bootstrap-icons.css") }}" rel="stylesheet">
+  <link href="{{ asset("assets/frontend/vendor/boxicons/css/boxicons.min.css") }}" rel="stylesheet">
+  <link href="{{ asset("assets/frontend/vendor/glightbox/css/glightbox.min.css") }}" rel="stylesheet">
+  <link href="{{ asset("assets/frontend/vendor/remixicon/remixicon.css") }}" rel="stylesheet">
+  <link href="{{ asset("assets/frontend/vendor/swiper/swiper-bundle.min.css") }}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+
+  <!-- Template Main CSS File -->
+  <link href="{{ asset("assets/frontend/css/style.css") }}" rel="stylesheet">
+  @yield('styles')
 </head>
-
-<body lang="en">
-    <div id="app">
+<body>

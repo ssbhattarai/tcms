@@ -1,7 +1,7 @@
 @extends('layouts.frontend_layouts.app')
 @prepend('styles')
 <link href="{{ asset('/css/index.css') }}" rel="stylesheet" />
-<link rel="stylesheet" href="{{asset('/assets/vendors/swiper/css/swiper.min.css')}}">  
+<link rel="stylesheet" href="{{asset('/assets/vendors/swiper/css/swiper.min.css')}}">
 
 @endprepend
 @prepend('script')
@@ -45,27 +45,27 @@
                 @foreach($slider as $item)
                 <div class="swiper-slide">
                     <div class="swiper-image">
-                        <img src="{{asset('/storage/'.$item->image)}}" alt="">            
+                        <img src="{{asset('/storage/'.$item->image)}}" alt="">
                     </div>
                     <div class="swiper-text">
                         @if ($item->title)
-                            <h1>{{$item->title}}</h1>   
-                        @endif                        
+                            <h1>{{$item->title}}</h1>
+                        @endif
                         @if ($item->description)
                             <p>{{$item->description}}</p>
                         @endif
                         @if ($item->link && $item->link !== "" && $item->link !== null)
                             <a href="{{$item->link}}" class="button"> {{$item->link_name}}</a>
                         @endif
-                    </div>   
-                </div> 
-                @endforeach     
+                    </div>
+                </div>
+                @endforeach
                 </div>
             <!-- Add Arrows -->
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
         </div>
-        
+
     </section>
 
 
@@ -94,7 +94,7 @@
                   </div>
                 </a>
               </div>
-          @endforeach          
+          @endforeach
         </div>
       </div>
     </section>
@@ -118,10 +118,10 @@
         <div class="col-md-8 p-0 m-0">
           <latest-recipie></latest-recipie>
         </div>
-      
+
       </div>
     </section>
-    
+
 
 
     <section>
@@ -139,17 +139,17 @@
           <div class="underline"></div>
         </div>
         <div class="blog-list row col-md-11 col-12 m-auto">
-          
+
           @foreach ($blog as $item)
               <div class="blog-item  mb-5 col-md-3 col-sm-6">
                 <div class="blog-content shadow p-0 m-0">
                   <a href="{{url('/blog/' . $item->slug)}}" class="p-0 m-0">
                     <div class="blog-image">
                       <img class="col-12 p-0 m-0" src="{{asset('/storage/'.$item->image)}}" alt="">
-                      
+
                     </div>
                     <div class="blog-title">
-                      <h5 class="font-weight-bold">{{$item->title}}</h5>                      
+                      <h5 class="font-weight-bold">{{$item->title}}</h5>
                       <div class="blog-description">
                         {{Str::words(strip_tags($item->description), '8')}}
                       </div>
@@ -158,7 +158,7 @@
                           <span></span>
                       </div>
                     </div>
-                  </a>                  
+                  </a>
                 </div>
               </div>
           @endforeach
@@ -189,20 +189,20 @@
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },
-    });  
+    });
 
     // for menu list items
     var swiper = new Swiper('.menu-list', {
       slidesPerView:'auto',
       spaceBetween: 20,
       loopFillGroupWithBlank: true,
-            
+
     });
 
-   
-  </script>
-   
 
- 
+  </script>
+
+
+
 
 @endsection

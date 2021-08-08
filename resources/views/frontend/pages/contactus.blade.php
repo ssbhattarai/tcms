@@ -1,167 +1,172 @@
 @extends('frontend.layouts.app')
 @section('content')
-<div class="page-title-area">
-    <div class="d-table">
-       <div class="d-table-cell">
-          <div class="container">
-             <h2>Contact Us</h2>
-          </div>
-       </div>
-    </div>
-    <div class="shape1"><img src="{{ asset('frontend/images/shape1.png') }}" alt="shape"></div>
-    <div class="shape2 rotateme"><img src="{{ asset('frontend/fonts/shape2.svg') }}" alt="shape"></div>
-    <div class="shape3"><img src="{{ asset('frontend/fonts/shape3.svg') }}" alt="shape"></div>
-    <div class="shape4"><img src="{{ asset('frontend/fonts/shape4.svg') }}" alt="shape"></div>
-    <div class="shape5"><img src="{{ asset('frontend/images/shape5.png') }}" alt="shape"></div>
-    <div class="shape6 rotateme"><img src="{{ asset('frontend/fonts/shape4.svg') }}" alt="shape"></div>
-    <div class="shape7"><img src="{{ asset('frontend/fonts/shape4.svg') }}" alt="shape"></div>
-    <div class="shape8 rotateme"><img src="{{ asset('frontend/fonts/shape2.svg') }}" alt="shape"></div>
- </div>
- <div class="contact-info-area ptb-80">
-    <div class="container">
-       <div class="row justify-content-center">
-          <div class="col-lg-4 col-md-6 col-sm-6">
-             <div class="contact-info-box">
-                <div class="icon">
-                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                      <polyline points="22,6 12,13 2,6"/>
-                   </svg>
-                </div>
-                <h3>Mail Here</h3>
-                <p><a href="mailto:thopomachine@gmail.com"><span class="__cf_email__" >thopomachine@gmail.com</span></a></p>
-             </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-6">
-             <div class="contact-info-box">
-                <div class="icon">
-                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                      <circle cx="12" cy="10" r="3"/>
-                   </svg>
-                </div>
-                <h3>Visit Here</h3>
-                <p>Koteshwor Mahadevsthan</p>
-             </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-6">
-             <div class="contact-info-box">
-                <div class="icon">
-                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                   </svg>
-                </div>
-                <h3>Call Here</h3>
-                <p><a href="tel:+977984444444444">+977 984444444444</a></p>
-                <p><a href="tel:+977984444444444">+977 984444444444</a></p>
-             </div>
-          </div>
-       </div>
-    </div>
- </div>
- @if (isset($map))
-            @if ($map->count() !== 0)
-            {!!$map->name !!}
-            @endif
-        @endif
+<main id="main">
 
- <div class="contact-area ptb-80">
-    <div class="container">
-       <div class="section-title">
-          <h2>Get In Touch With Us</h2>
-          <div class="bar"></div>
-          <p>Anything On your Mind. We’ll Be Glad To Assist You!</p>
-       </div>
-       <div class="row align-items-center">
-          <div class="col-lg-6 col-md-12"><img src="{{ asset('frontend/images/contact-img.png') }}" alt="image"></div>
-          <div class="col-lg-6 col-md-12">
-            @if ($message = Session::get('success'))
-            <div class="col-lg-12 mt-2">
-                <div class="alert alert-success alert-block text-center">
-                    <button type="button" class="close" data-dismiss="alert">×</button>
-                    <strong>{{ $message }}</strong>
-                </div>
-            </div>
-        @endif
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
 
-        @if ($message = Session::get('error'))
-            <div class="col-lg-12 mt-2">
-                <div class="alert alert-danger alert-block text-center">
-                    <button type="button" class="close" data-dismiss="alert">×</button>
-                    <strong>{{ $message }}</strong>
-                </div>
-            </div>
-        @endif
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li>Contact</li>
+            </ol>
+            <h2>Contact</h2>
 
-             <form id="contactForm" action="{{ url('save-contact') }}" method="POST">
-                @csrf
-                <div class="row">
-                   <div class="col-lg-12 col-md-12">
-                      <div class="form-group">
-                         <input type="text" name="name" placeholder="Your Name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}">
+        </div>
+    </section><!-- End Breadcrumbs -->
 
-                         @error('name')
+    <section class="inner-page">
+        <div class="container">
+            <!-- ======= Contact Section ======= -->
+            <section id="contact" class="contact">
+                <div class="container" data-aos="fade-up">
 
-                        <div class="invalid-feedback" style="display:block">
-                            {{ $message }}
+                    <div class="section-title">
+                        <h2>Contact</h2>
+                        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem.
+                            Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit
+                            alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-lg-5 d-flex align-items-stretch">
+                            <div class="info">
+                                <div class="address">
+                                    <i class="bi bi-geo-alt"></i>
+                                    <h4>Location:</h4>
+                                    <p>A108 Adam Street, New York, NY 535022</p>
+                                </div>
+
+                                <div class="email">
+                                    <i class="bi bi-envelope"></i>
+                                    <h4>Email:</h4>
+                                    <p>info@example.com</p>
+                                </div>
+
+                                <div class="phone">
+                                    <i class="bi bi-phone"></i>
+                                    <h4>Call:</h4>
+                                    <p>+1 5589 55488 55s</p>
+                                </div>
+
+                                {{-- @if (isset($map))
+                                @if ($map->count() !== 0)
+                                {!!$map->name !!}
+                                @endif
+                                @endif --}}
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+
+                            </div>
+
                         </div>
-                        @enderror
 
-                      </div>
-                   </div>
-                   <div class="col-lg-6 col-md-6">
-                      <div class="form-group">
-                         <input type="text" name="email" placeholder="Your email address" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}">
-                         @error('email')
 
-                         <div class="invalid-feedback" style="display:block">
-                             {{ $message }}
-                         </div>
-                         @enderror
-                      </div>
-                   </div>
-                   <div class="col-lg-6 col-md-6">
-                      <div class="form-group">
-                         <input type="text" name="phone" placeholder="Your phone number" class="form-control @error('phone') is-invalid @enderror" value="{{ old('phone') }}">
-                         @error('phone')
+                        <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+                            @if ($message = Session::get('success'))
+                        <div class="col-lg-12 mt-2">
 
-                         <div class="invalid-feedback" style="display:block">
-                             {{ $message }}
-                         </div>
-                         @enderror
-                      </div>
-                   </div>
-                   <div class="col-lg-12 col-md-12">
-                      <div class="form-group">
-                         <input type="text" name="subject" placeholder="Your Subject" class="form-control @error('subject') is-invalid @enderror" value="{{ old('subject') }}">
+                        <div class="alert alert-success" role="alert">
+                            {{ $message }}
+                          </div>
+                        </div>
+                        @endif
+                            @if ($message = Session::get('error'))
+                            <div class="col-lg-12 mt-2">
+                                <div class="alert alert-danger alert-block text-center">
+                                    <button type="button" class="close" data-dismiss="alert">×</button>
+                                    <strong>{{ $message }}</strong>
+                                </div>
+                            </div>
+                            @endif
 
-                         @error('subject')
 
-                         <div class="invalid-feedback" style="display:block">
-                             {{ $message }}
-                         </div>
-                         @enderror
 
-                      </div>
-                   </div>
-                   <div class="col-lg-12 col-md-12">
-                      <div class="form-group">
-                         <textarea name="message" cols="30" rows="5" placeholder="Write your message..." class="form-control @error('message') is-invalid @enderror">{{ old('message') }}</textarea>
-                         @error('message')
 
-                         <div class="invalid-feedback" style="display:block">
-                             {{ $message }}
-                         </div>
-                         @enderror
-                      </div>
-                   </div>
-                   <div class="col-lg-12 col-sm-12"><button type="submit" class="btn btn-primary">Send Message</button></div>
+                            <form action="{{ url('save-contact') }}" method="POST" role="form" class="php-email-form">
+                                @csrf
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label for="name">Your Name</label>
+                                        <input type="text" name="name" placeholder="Your Name"
+                                            class="form-control @error('name') is-invalid @enderror"
+                                            value="{{ old('name') }}" required>
+
+                                        @error('name')
+
+                                        <div class="invalid-feedback" style="display:block">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="email">Your Email</label>
+                                        <input type="text" name="email" placeholder="Your email address"
+                                            class="form-control @error('email') is-invalid @enderror"
+                                            value="{{ old('email') }}" required>
+                                        @error('email')
+
+                                        <div class="invalid-feedback" style="display:block">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
+
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="phone">Your Phone</label>
+                                        <input type="text" name="phone" placeholder="Your phone number"
+                                            class="form-control @error('phone') is-invalid @enderror"
+                                            value="{{ old('phone') }}" required>
+                                        @error('phone')
+
+                                        <div class="invalid-feedback" style="display:block">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
+                                    </div>
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">Subject</label>
+                                    <input type="text" name="subject" placeholder="Your Subject"
+                                        class="form-control @error('subject') is-invalid @enderror"
+                                        value="{{ old('subject') }}" required>
+
+                                    @error('subject')
+
+                                    <div class="invalid-feedback" style="display:block">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">Message</label>
+                                    <textarea name="message" cols="30" rows="5" placeholder="Write your message..."
+                                        class="form-control @error('message') is-invalid @enderror"
+                                        required>{{ old('message') }}</textarea>
+                                    @error('message')
+
+                                    <div class="invalid-feedback" style="display:block">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
+                                </div>
+                                <div class="text-center"><button type="submit" >Send
+                                        Message</button></div>
+                            </form>
+                        </div>
+
+                    </div>
+
                 </div>
-             </form>
-          </div>
-       </div>
-    </div>
- </div>
+            </section><!-- End Contact Section -->
+        </div>
+    </section>
+
+</main><!-- End #main -->
+
 
 
 @endsection

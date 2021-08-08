@@ -1,29 +1,48 @@
 @extends('frontend.layouts.app')
 @section('content')
-<div class="page-title-area">
-    <div class="d-table">
-       <div class="d-table-cell">
-          <div class="container">
-             <h2>About Us</h2>
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>About Us</li>
+        </ol>
+        <h2>About Us</h2>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <section class="inner-page">
+      <div class="container">
+           <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+        <div class="container" data-aos="fade-up">
+
+          <div class="section-title">
+            <h2>About Us</h2>
           </div>
-       </div>
-    </div>
-    <div class="shape1"><img src="{{ asset('frontend/images/shape1.png') }}" alt="shape"></div>
-    <div class="shape2 rotateme"><img src="{{ asset('frontend/fonts/shape2.svg') }}" alt="shape"></div>
-    <div class="shape3"><img src="{{ asset('frontend/fonts/shape3.svg') }}" alt="shape"></div>
-    <div class="shape4"><img src="{{ asset('frontend/fonts/shape4.svg') }}" alt="shape"></div>
-    <div class="shape5"><img src="{{ asset('frontend/images/shape5.png') }}" alt="shape"></div>
-    <div class="shape6 rotateme"><img src="{{ asset('frontend/fonts/shape4.svg') }}" alt="shape"></div>
-    <div class="shape7"><img src="{{ asset('frontend/fonts/shape4.svg') }}" alt="shape"></div>
-    <div class="shape8 rotateme"><img src="{{ asset('frontend/fonts/shape2.svg') }}" alt="shape"></div>
- </div>
- <div class="contact-info-area ptb-80">
-    <div class="container">
-        @if($aboutus)
-            {!! $aboutus->description !!}
-        @else
-            No Data
-        @endif
-    </div>
- </div>
+
+          <div class="row content">
+            <div class="col-lg-6   about-img" data-aos="zoom-in" data-aos-delay="200">
+              <img src="assets/frontend/img/about-us.png" class="img-fluid animated" alt="">
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0">
+            @if($aboutus)
+                {!! $aboutus->description !!}
+            @else
+                No Data
+            @endif
+            </div>
+          </div>
+
+        </div>
+      </section><!-- End About Us Section -->
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
 @endsection

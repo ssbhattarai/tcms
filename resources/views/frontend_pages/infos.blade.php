@@ -1,16 +1,16 @@
 @extends('layouts.frontend_layouts.app')
 
 @push('styles')
-    <link rel="stylesheet" href="{{asset('/css/infos.css')}}"> 
-     
+    <link rel="stylesheet" href="{{asset('/css/infos.css')}}">
+
 @endpush
 @push('script')
 @endpush
 
 @section('content')
 
-    @php     
-        $images = ['sunset.jpg','stupa.jpg','everest.jpg'];        
+    @php
+        $images = ['sunset.jpg','stupa.jpg','everest.jpg'];
         $random = rand(0,count($images)) ?rand(0,count($images))  : 0 ;
         if ($random !==0) {
             $random = $random -1;
@@ -22,8 +22,8 @@
         <section>
             <div class="header-title" style="background-image: url(/assets/images/{{$images[$random]}});">
                 <div>
-                    <h2>{{$infos->page_name}}</h2>   
-                    <div class="underline"></div>     
+                    <h2>{{$infos->page_name}}</h2>
+                    <div class="underline"></div>
                 </div>
             </div>
         </section>
@@ -33,7 +33,7 @@
                 {!! $infos->description !!}
             </div>
         </section>
-        
+
     @endif
 
 
