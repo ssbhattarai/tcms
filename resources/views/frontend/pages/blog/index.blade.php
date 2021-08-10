@@ -1,8 +1,8 @@
 @extends('frontend.layouts.app')
+@section('title', 'Blogs - Thoplomachine')
+
 @section('content')
-
-
-       <main id="main">
+    <main id="main">
 
         <!-- ======= Breadcrumbs ======= -->
         <section id="breadcrumbs" class="breadcrumbs">

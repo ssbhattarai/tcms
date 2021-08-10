@@ -6,6 +6,8 @@ use App\Http\Controllers\BaseController;
 use App\Models\Info;
 use Cocur\Slugify\Slugify;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+
 
 class InfoController extends BaseController
 {
@@ -45,19 +47,44 @@ class InfoController extends BaseController
             'description' => 'required|string',
         ]);
 
+        if ($request->hasfile('image')) {
+
+            $i = Storage::disk('public')->put('blogs', $request->image[0]);
+
+            $store = new Info();
+            $slugify = new Slugify();
+            $store->slug = $slugify->slugify($request->name);
+            $store->page_name = $request->name;
+            $store->description = $request->description;
+            $store->save();
+
+        if ($store) {
+            return response()->json($store, 201);
+
+        } else {
+            return json_encode($this->reportError('Failed'));
+        }
+        } else {
+
         $store = new Info();
         $slugify = new Slugify();
         $store->slug = $slugify->slugify($request->name);
 
         $store->page_name = $request->name;
         $store->description = $request->description;
+        $store->seo_title = $request->seo_title ? $request->seo_title : $request->name;
+        $store->meta_description = $request->meta_description;
+        $store->meta_keywords = $request->meta_keywords;
+
         $store->save();
+
         if ($store) {
-            return json_encode($this->reportSuccess('Page added successfully'));
+            return response()->json($store, 201);
 
         } else {
             return json_encode($this->reportError('Failed'));
         }
+    }
 
     }
 

@@ -21,6 +21,7 @@
         "laravel/passport": "^10.1",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.2",
+        "livewire/livewire": "^2.5",
         "nesbot/carbon": "^2.46",
         "stripe/stripe-php": "^7.75"
     },

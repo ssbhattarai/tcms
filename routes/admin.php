@@ -42,13 +42,8 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('/team', App\Http\Controllers\Backend\Settings\TeamController::class)->only(['index', 'update', 'destroy', 'store']);
         Route::post('changeteamstatus/{id}', [App\Http\Controllers\Backend\Settings\TeamController::class, 'changeteamstatus']);
 
-
-        // Users---------------------------------------------------------------------------------------------
-        // Route::resource('/users', App\Http\Controllers\Backend\Users\UserController::class)->only(['index', 'update', 'destroy']);
-        // Route::post('/get-all-users', [App\Http\Controllers\Backend\Users\UserController::class, 'getAllUsers']);
-
         // blogs----------------------------------------------------------------------------------------------
-        Route::resource('/blogs', App\Http\Controllers\Backend\Pages\BlogController::class)->only(['index', 'store', 'destroy']);
+        Route::resource('/blogs', App\Http\Controllers\Backend\Pages\BlogController::class)->only(['index', 'create', 'store', 'destroy']);
         Route::post('/get-all-blogs', [App\Http\Controllers\Backend\Pages\BlogController::class, 'getAllBlogs']);
         Route::post('/blogs/update', [App\Http\Controllers\Backend\Pages\BlogController::class, 'updateBlog']);
 

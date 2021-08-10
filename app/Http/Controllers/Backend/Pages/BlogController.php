@@ -19,7 +19,12 @@ class BlogController extends BaseController
      */
     public function index()
     {
-        return view('admin_pages.blogs.blogs');
+        return view('admin.pages.blogs.index');
+    }
+
+    public function create()
+    {
+        return view('admin.pages.blogs.create');
     }
 
     public function getAllBlogs(Request $request)

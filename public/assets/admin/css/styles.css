@@ -1,0 +1,9 @@
+.img-fit {
+    width: 17%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.nav-width {
+    width: 70.4em
+}

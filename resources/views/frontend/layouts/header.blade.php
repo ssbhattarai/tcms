@@ -5,9 +5,25 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Lotus Bootstrap Template - Index</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <title>@yield('title')</title>
+
+  <meta name ="description", content="@yield('meta_description', 'Best IOT Company In Nepal')">
+<meta name ="keywords", content="@yield('meta_keywords', 'Iot In nepal')">
+<meta name ="title", content="@yield('seo_title', 'Iot In nepal')">
+
+<link rel="canonical" href="{{ env('APP_URL') }}" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="@yield('seo_title', 'Best Iot Company in Nepal')" />
+<meta property="og:description"
+    content="@yield('meta_description', 'Best IOT Company In Nepal')" />
+<meta property="og:url" content="{{ env('APP_URL') }}" />
+<meta property="og:site_name" content="THOPLOMACHINE" />
+<meta name="twitter:description"
+    content="@yield('meta_description', 'Best IOT Company In Nepal')" />
+<meta name="twitter:title" content="@yield('seo_title', 'Best IOT Company In Nepal')" />
+<meta name="twitter:site" content="@Thoplomachine" />
+<meta name="twitter:creator" content="@Thoplomachine" />
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">

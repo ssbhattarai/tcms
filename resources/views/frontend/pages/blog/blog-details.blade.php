@@ -1,6 +1,19 @@
 @extends('frontend.layouts.app')
 @section('content')
 
+@section('title', $blog->title)
+
+@section('meta_description')
+        {{$blog->meta_description ? $blog->meta_description : ""}}
+@endsection
+
+@section('meta_kewords')
+         {{$blog->meta_keywords ? $blog->meta_keywords : ""}}
+@endsection
+
+@section('seo_title')
+         {{$blog->seo_title ? $blog->seo_title : $blog->title}}
+@endsection
 
  <main id="main">
 

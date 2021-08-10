@@ -168,14 +168,6 @@ class FrontendController extends BaseController
 
     public function Blog()
     {
-        SEOTools::setTitle('Blogs - Thoplo Machine');
-        SEOTools::setDescription('All blogs lists');
-        SEOTools::opengraph()->setUrl('http://thoplomachine.com/');
-        SEOTools::setCanonical('http://thoplomachine.com/blog');
-        SEOTools::opengraph()->addProperty('type', 'articles');
-        SEOTools::twitter()->setSite('@thoplomachine');
-        SEOTools::jsonLd()->addImage('http://thoplomachine.com');
-
         $blog = Blog::with('category')->orderBy('id', 'desc')->get();
         return view('frontend.pages.blog.index', compact('blog'));
     }

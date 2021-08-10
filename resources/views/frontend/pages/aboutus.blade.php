@@ -1,11 +1,16 @@
 @extends('frontend.layouts.app')
+
+@section('title', $aboutus->seo_title ? $aboutus->seo_title : 'About Us')
+
+@section('meta_description'){{$aboutus->meta_description ? $aboutus->meta_description : ""}}@endsection
+@section('meta_keywords'){{$aboutus->meta_keywords ? $aboutus->meta_keywords : ""}}@endsection
+@section('seo_title'){{$aboutus->seo_title ? $aboutus->seo_title : $aboutus->title}}@endsection
+
 @section('content')
   <main id="main">
-
     <!-- ======= Breadcrumbs ======= -->
     <section id="breadcrumbs" class="breadcrumbs">
       <div class="container">
-
         <ol>
           <li><a href="index.html">Home</a></li>
           <li>About Us</li>

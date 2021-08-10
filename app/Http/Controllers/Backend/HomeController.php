@@ -47,10 +47,11 @@ class HomeController extends Controller
         //     ->where('is_seen', 1)
         //     ->get();
 
-        return view('admin_pages.index', [
-            'users' => $users,
-            'total_users' => $total_users,
+        // return view('admin_pages.index', [
+        //     'users' => $users,
+        //     'total_users' => $total_users,
 
-        ]);
+        // ]);
+        return view('admin.index');
     }
 }

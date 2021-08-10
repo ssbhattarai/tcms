@@ -36,10 +36,6 @@ Route::get('/blogs/{category}', [App\Http\Controllers\Frontend\FrontendControlle
 Route::get('/category/{blogcategory}', [App\Http\Controllers\Frontend\FrontendController::class, 'blogCategory']);
 Route::post('/get-blog-category', [App\Http\Controllers\Frontend\FrontendController::class, 'getBlogByCategory']);
 
-//menu
-Route::get('/menu', [App\Http\Controllers\Frontend\FrontendController::class, 'Menu']);
-Route::get('/menu/{cat_name}', [App\Http\Controllers\Frontend\FrontendController::class, 'MenuCategoryView']);
-
 Auth::routes();
 
 //our team
@@ -56,6 +52,3 @@ Route::get('/privacy-policy', [App\Http\Controllers\Frontend\FrontendController:
 Route::get('/term-condition', [App\Http\Controllers\Frontend\FrontendController::class, 'termscondition']);
 Route::get('/about-us', [App\Http\Controllers\Frontend\FrontendController::class, 'aboutus']);
 
-
-
-Route::get('social-share', [SocialShareController::class, 'index']);

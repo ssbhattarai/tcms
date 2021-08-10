@@ -1,13 +1,5 @@
 {
-    "/js/admin.js": "/js/admin.js",
-    "/js/frontend.js": "/js/frontend.js",
-    "/css/cart.css": "/css/cart.css",
-    "/css/blog-detail.css": "/css/blog-detail.css",
-    "/css/reservation.css": "/css/reservation.css",
-    "/css/index.css": "/css/index.css",
-    "/css/about.css": "/css/about.css",
-    "/css/infos.css": "/css/infos.css",
-    "/css/blog.css": "/css/blog.css",
-    "/css/menu.css": "/css/menu.css",
+    "/js/app.js": "/js/app.js",
+    "/asstes/admin/js/blogs.js": "/asstes/admin/js/blogs.js",
     "/css/app.css": "/css/app.css"
 }
